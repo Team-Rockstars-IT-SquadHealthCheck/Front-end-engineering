@@ -1,8 +1,8 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    HttpClient httpClient = new();
+    string httpResponseMessage = await httpClient.GetStringAsync("http://localhost:8000/HelloWorld");
+    Console.WriteLine(httpResponseMessage);
 }
+<p>@httpResponseMessage</p>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
