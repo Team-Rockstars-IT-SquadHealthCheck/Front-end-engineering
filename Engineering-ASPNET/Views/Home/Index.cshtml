@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home Front Page";
     HttpClient httpClient = new();
     string httpResponseMessage = await httpClient.GetStringAsync("http://localhost:8000/HelloWorld");
     Console.WriteLine(httpResponseMessage);
