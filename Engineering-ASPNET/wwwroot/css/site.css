@@ -20,3 +20,40 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+label {
+  color: #232323;
+  font-family: "DIN 2014", sans-serif;
+  font-weight: normal !important;
+}
+
+input {
+  font-family: "DIN 2014", sans-serif;
+  font-weight: normal !important;
+  color: #232323;
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.0);
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+input:focus {
+  border: 2px solid #ffe000;
+  outline: none;
+}
+
+button {
+  font-family: "DIN 2014", sans-serif;
+  font-weight: bold !important;
+  background-color: #ffe000;
+  color: #232323;
+  padding: 12px 22px;
+  border-radius: 5px;
+  border-style: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #232323;
+  color: #ffffff
+}
