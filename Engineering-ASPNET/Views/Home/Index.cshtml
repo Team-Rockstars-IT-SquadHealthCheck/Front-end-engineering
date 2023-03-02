@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Home Front Page";
     HttpClient httpClient = new();
-    string httpResponseMessage = await httpClient.GetStringAsync("http://localhost:8000/HelloWorld");
+    string httpResponseMessage = await httpClient.GetStringAsync("http://40.113.119.8:80/HelloWorld");
     Console.WriteLine(httpResponseMessage);
 }
 <p>@httpResponseMessage</p>
