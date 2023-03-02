@@ -5,9 +5,7 @@
     <projectFile profileName="https">Engineering-ASPNET/Engineering-ASPNET.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6e0e025-89c5-4c22-b918-fb582399243f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Engineering-ASPNET/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Engineering-ASPNET/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="b6e0e025-89c5-4c22-b918-fb582399243f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,6 +84,7 @@
       <workItem from="1677588700986" duration="739000" />
       <workItem from="1677591428369" duration="1278000" />
       <workItem from="1677744365385" duration="323000" />
+      <workItem from="1677744701230" duration="567000" />
     </task>
     <task id="LOCAL-00001" summary="Add gitignore and remove unwanted files">
       <created>1677575406223</created>
