@@ -1,24 +1,161 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-	<title>Werkteam Health Check</title>
+    <title>Spotify Health Check</title>
+    <style>
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .groen {
+            color: green;
+        }
+
+        .oranje {
+            color: orange;
+        }
+
+        .rood {
+            color: red;
+        }
+
+    </style>
 </head>
 <body>
-	<h1>Werkteam Health Check</h1>
-	<p>Kies de status van het werkteam:</p>
-	<div>
-		<a href="#">
-			<div class="status-circle green"></div>
-			Goed
-		</a>
-		<a href="#">
-			<div class="status-circle orange"></div>
-			Gemiddeld
-		</a>
-		<a href="#">
-			<div class="status-circle red"></div>
-			Slecht
-		</a>
-	</div>
+    <h1>Spotify Health Check</h1>
+    <form action="#" method="post">
+        <h2>Vraag 1</h2>
+        <div>
+            <h3>
+                Doel en visie:
+            </h3>
+            <div>
+                Heeft het team duidelijk gedefinieerde doelen en een visie die alle teamleden begrijpen en ondersteunen?
+            </div>
+            <div class="radio-buttons">
+                <label><input type="radio" name="doel" value="groen"> Groen</label>
+                <label><input type="radio" name="doel" value="oranje"> Oranje</label>
+                <label><input type="radio" name="doel" value="rood"> Rood</label>
+            </div>
+        </div>
+
+        <h2>Vraag 2</h2>
+        <div>
+            <h3>
+                Technologie:
+            </h3>
+            <div>
+                Is de technologie die het team gebruikt up-to-date, goed onderhouden en passend voor het werk dat ze doen?
+            </div>
+            <div class="radio-buttons">
+                <label><input type="radio" name="technologie" value="groen"> Groen</label>
+                <label><input type="radio" name="technologie" value="oranje"> Oranje</label>
+                <label><input type="radio" name="technologie" value="rood"> Rood</label>
+            </div>
+        </div>
+
+        <h2>Vraag 3</h2>
+        <div>
+            <h3>
+                Gezamenlijk eigendom:
+            </h3>
+            <div>
+                Wordt de verantwoordelijkheid voor werk gedeeld tussen de teamleden en zijn ze allemaal even betrokken bij het succes van het team?
+            </div>
+            <div class="radio-buttons">
+                <label><input type="radio" name="eigendom" value="groen"> Groen</label>
+                <label><input type="radio" name="eigendom" value="oranje"> Oranje</label>
+                <label><input type="radio" name="eigendom" value="rood"> Rood</label>
+            </div>
+        </div>
+
+        <h2>Vraag 4</h2>
+        <div>
+            <h3>
+                Feedback en continue verbetering:
+            </h3>
+            <div>
+                Is er een cultuur van open communicatie en feedback binnen het team, en zijn teamleden bereid om te leren en te verbeteren?
+            </div>
+            <div class="radio-buttons">
+                <label><input type="radio" name="feedback" value="groen"> Groen</label>
+                <label><input type="radio" name="feedback" value="oranje"> Oranje</label>
+                <label><input type="radio" name="feedback" value="rood"> Rood</label>
+            </div>
+        </div>
+
+        <h2>Vraag 5</h2>
+        <div>
+            <h3>
+                Samenwerking en communicatie:
+            </h3>
+            <div>
+                Is er een effectieve samenwerking en communicatie tussen teamleden, en zijn ze in staat om constructief om te gaan met meningsverschillen?
+            </div>
+            <div class="radio-buttons">
+                <label><input type="radio" name="samenwerking" value="groen"> Groen</label>
+                <label><input type="radio" name="samenwerking" value="oranje"> Oranje</label>
+                <label><input type="radio" name="samenwerking" value="rood"> Rood</label>
+            </div>
+        </div>
+
+        <h2>Vraag 6</h2>
+        <div>
+            <h3>
+                Werklast en prioriteiten:
+            </h3>
+            <div>
+                Is er een evenwichtige werklast en prioriteitstelling binnen het team, en wordt het werk op een efficiënte en effectieve manier uitgevoerd?
+            </div>
+            <div class="radio-buttons">
+                <label><input type="radio" name="samenwerking" value="groen"> Groen</label>
+                <label><input type="radio" name="samenwerking" value="oranje"> Oranje</label>
+                <label><input type="radio" name="samenwerking" value="rood"> Rood</label>
+            </div>
+        </div>
+
+        <h2>Vraag 7</h2>
+        <div>
+            <h3>
+                Zelforganisatie:
+            </h3>
+            <div>
+                Is het team in staat om zichzelf te organiseren en te plannen, zonder de noodzaak van externe sturing?
+            </div>
+            <div class="radio-buttons">
+                <label><input type="radio" name="samenwerking" value="groen"> Groen</label>
+                <label><input type="radio" name="samenwerking" value="oranje"> Oranje</label>
+                <label><input type="radio" name="samenwerking" value="rood"> Rood</label>
+            </div>
+        </div>
+
+        <h2>Vraag 8</h2>
+        <div>
+            <h3>
+                Veiligheid en inclusie:
+            </h3>
+            <div>
+                Voelen teamleden zich veilig en ondersteund in hun werk en is er een cultuur van inclusie en diversiteit?
+            </div>
+            <div class="radio-buttons">
+                <label><input type="radio" name="samenwerking" value="groen"> Groen</label>
+                <label><input type="radio" name="samenwerking" value="oranje"> Oranje</label>
+                <label><input type="radio" name="samenwerking" value="rood"> Rood</label>
+            </div>
+        </div>
+    </form>
 </body>
 </html>
