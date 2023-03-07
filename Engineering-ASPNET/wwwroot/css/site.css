@@ -99,3 +99,7 @@ button:hover {
   border: 2px solid rgba(255, 255, 255, 0) !important;
   color: #ffffff !important;
 }
+
+.container-fluid {
+  max-width: 1200px;
+}
