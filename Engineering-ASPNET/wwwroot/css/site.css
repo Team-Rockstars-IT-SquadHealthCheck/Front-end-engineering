@@ -105,3 +105,8 @@ button:hover {
   padding-left: 45px;
   padding-right: 45px;
 }
+
+.button {
+    margin-bottom: 10px;
+}
+
