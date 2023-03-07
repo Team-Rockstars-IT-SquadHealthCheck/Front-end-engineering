@@ -62,7 +62,7 @@ button:hover {
   background-color: #ffffff !important;
   border: 2px solid #00d46b !important;
   color: #00d46b !important;
-  border-radius: 25px !important;
+  border-radius: 5px !important;
   transition: background-color 0.3s ease-in-out;
 }
 
@@ -70,7 +70,7 @@ button:hover {
   background-color: #ffffff !important;
   border: 2px solid #FF9803 !important;
   color: #FF9803 !important;
-  border-radius: 25px !important;
+  border-radius: 5px !important;
   transition: background-color 0.3s ease-in-out;
 }
 
@@ -78,7 +78,7 @@ button:hover {
   background-color: #ffffff !important;
   border: 2px solid #ff6235 !important;
   color: #ff6235 !important;
-  border-radius: 25px !important;
+  border-radius: 5px !important;
   transition: background-color 0.3s ease-in-out;
 }
 
@@ -101,10 +101,17 @@ button:hover {
 }
 
 .container-fluid {
-  max-width: 1200px;
+  max-width: 1500px;
+  margin-left: 45px;
+  margin-right: 45px;
 }
 
+<<<<<<< HEAD
 .button {
     margin-bottom: 10px;
+=======
+.custom-btn {
+  margin-top: 50px !important;
+>>>>>>> 73355920618ec9d120954f8e906acafa34fea74c
 }
 

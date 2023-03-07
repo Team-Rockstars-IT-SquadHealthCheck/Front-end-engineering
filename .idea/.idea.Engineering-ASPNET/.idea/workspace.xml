@@ -7,6 +7,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b6e0e025-89c5-4c22-b918-fb582399243f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Engineering-ASPNET/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Engineering-ASPNET/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engineering-ASPNET/Views/Home/Privacy.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Engineering-ASPNET/Views/Home/Privacy.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engineering-ASPNET/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Engineering-ASPNET/Views/Shared/_Layout.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engineering-ASPNET/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/Engineering-ASPNET/wwwroot/css/site.css" afterDir="false" />
     </list>
@@ -89,7 +90,9 @@
       <workItem from="1677591428369" duration="1278000" />
       <workItem from="1677744365385" duration="323000" />
       <workItem from="1677744701230" duration="7606000" />
-      <workItem from="1678176399460" duration="4153000" />
+      <workItem from="1678176399460" duration="5450000" />
+      <workItem from="1678181865259" duration="974000" />
+      <workItem from="1678183056643" duration="351000" />
     </task>
     <task id="LOCAL-00001" summary="Add gitignore and remove unwanted files">
       <created>1677575406223</created>
@@ -112,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677576109205</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="REsolve merge conflict in privacy and site css">
+      <created>1678182192397</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1678182192397</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,6 +135,7 @@
     <MESSAGE value="Add gitignore and remove unwanted files" />
     <MESSAGE value="Extra commit" />
     <MESSAGE value="Change title of home page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change title of home page" />
+    <MESSAGE value="REsolve merge conflict in privacy and site css" />
+    <option name="LAST_COMMIT_MESSAGE" value="REsolve merge conflict in privacy and site css" />
   </component>
 </project>
