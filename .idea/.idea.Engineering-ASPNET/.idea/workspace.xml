@@ -16,6 +16,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bf9021a960b74107a7e141aa06bc9d8a0a53c929178c2fb95b1597be8af8dc/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -92,7 +95,7 @@
       <workItem from="1677744701230" duration="7606000" />
       <workItem from="1678176399460" duration="5450000" />
       <workItem from="1678181865259" duration="974000" />
-      <workItem from="1678183056643" duration="351000" />
+      <workItem from="1678183056643" duration="1617000" />
     </task>
     <task id="LOCAL-00001" summary="Add gitignore and remove unwanted files">
       <created>1677575406223</created>
