@@ -57,3 +57,24 @@ button:hover {
   background-color: #232323;
   color: #ffffff
 }
+
+.green-btn {
+  background-color: #ffffff !important;
+  border: 2px solid #00d46b !important;
+  color: #00d46b !important;
+  border-radius: 25px !important;
+}
+
+.orange-btn {
+  background-color: #ffffff !important;
+  border: 2px solid #FF9803 !important;
+  color: #FF9803 !important;
+  border-radius: 25px !important;
+}
+
+.red-btn {
+  background-color: #ffffff !important;
+  border: 2px solid #ff6235 !important;
+  color: #ff6235 !important;
+  border-radius: 25px !important;
+}
