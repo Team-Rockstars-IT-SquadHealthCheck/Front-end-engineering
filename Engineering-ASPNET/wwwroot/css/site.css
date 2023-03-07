@@ -103,3 +103,9 @@ button:hover {
 .container-fluid {
   max-width: 1200px;
 }
+
+
+.button {
+    margin-bottom: 10px;
+}
+
