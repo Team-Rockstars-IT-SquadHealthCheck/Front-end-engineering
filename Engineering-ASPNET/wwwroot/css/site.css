@@ -63,6 +63,7 @@ button:hover {
   border: 2px solid #00d46b !important;
   color: #00d46b !important;
   border-radius: 25px !important;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .orange-btn {
@@ -70,6 +71,7 @@ button:hover {
   border: 2px solid #FF9803 !important;
   color: #FF9803 !important;
   border-radius: 25px !important;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .red-btn {
@@ -77,4 +79,27 @@ button:hover {
   border: 2px solid #ff6235 !important;
   color: #ff6235 !important;
   border-radius: 25px !important;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.green-btn:hover{
+  background-color: #00d46b !important;
+  border: 2px solid rgba(255, 255, 255, 0) !important;
+  color: #ffffff !important;
+}
+
+.orange-btn:hover{
+  background-color: #FF9803 !important;
+  border: 2px solid rgba(255, 255, 255, 0) !important;
+  color: #ffffff !important;
+}
+
+.red-btn:hover{
+  background-color: #ff6235 !important;
+  border: 2px solid rgba(255, 255, 255, 0) !important;
+  color: #ffffff !important;
+}
+
+.container-fluid {
+  max-width: 1200px;
 }
