@@ -2,9 +2,11 @@
 <html>
 <head>
     <title>Spotify Health Check</title>
-    <style>
+     <style>
         h2 {
-            margin-bottom: 10px;
+            margin-top: 50px;
+            border-bottom: 2px solid black;
+            padding-bottom: 10px;
         }
 
         p {
@@ -16,23 +18,13 @@
             margin-bottom: 10px;
         }
 
-        input[type="radio"] {
-            margin-right: 10px;
+        <title > Button Selection</title >
+        .selected {
+            font-size: 24px;
         }
-
-        .groen {
-            color: green;
-        }
-
-        .oranje {
-            color: orange;
-        }
-
-        .rood {
-            color: red;
-        }
-
     </style>
+
+
 </head>
 <body>
     <h1>Spotify Health Check</h1>
@@ -42,12 +34,10 @@
             <div>
                 Heeft het team duidelijk gedefinieerde doelen en een visie die alle teamleden begrijpen en ondersteunen?
             </div>
-            git <div class="radio-buttons">
-                <p>Kies een kleur:</p>
-                <input type="radio" id="groen" name="kleur" value="groen"><label for="groen" style="color:green;cursor:pointer;">Groen</label><br>
-                <input type="radio" id="oranje" name="kleur" value="oranje"><label for="oranje" style="color:orange;cursor:pointer;">Oranje</label><br>
-                <input type="radio" id="rood" name="kleur" value="rood"><label for="rood" style="color:red;cursor:pointer;">Rood</label><br>
-            </div>
+            <h5>Selecteer een kleur:</h5>
+            <button id="green-btn">Groen</button>
+            <button id="orange-btn">Oranje</button>
+            <button id="red-btn">Rood</button>
         </div>
 
         <h2>Vraag 2: Technologie</h2>
@@ -55,11 +45,10 @@
             <div>
                 Is de technologie die het team gebruikt up-to-date, goed onderhouden en passend voor het werk dat ze doen?
             </div>
-            <div class="radio-buttons">
-                <label><input type="radio" name="technologie" value="groen"> Groen</label>
-                <label><input type="radio" name="technologie" value="oranje"> Oranje</label>
-                <label><input type="radio" name="technologie" value="rood"> Rood</label>
-            </div>
+            <h5>Selecteer een kleur:</h5>
+            <button id="green-btn">Groen</button>
+            <button id="orange-btn">Oranje</button>
+            <button id="red-btn">Rood</button>
         </div>
 
         <h2>Vraag 3: Gezamenlijk eigendom</h2>
@@ -67,11 +56,10 @@
             <div>
                 Wordt de verantwoordelijkheid voor werk gedeeld tussen de teamleden en zijn ze allemaal even betrokken bij het succes van het team?
             </div>
-            <div class="radio-buttons">
-                <label><input type="radio" name="eigendom" value="groen"> Groen</label>
-                <label><input type="radio" name="eigendom" value="oranje"> Oranje</label>
-                <label><input type="radio" name="eigendom" value="rood"> Rood</label>
-            </div>
+            <h5>Selecteer een kleur:</h5>
+            <button id="green-btn">Groen</button>
+            <button id="orange-btn">Oranje</button>
+            <button id="red-btn">Rood</button>
         </div>
 
         <h2>Vraag 4: Feedback en continue verbetering</h2>
@@ -79,11 +67,10 @@
             <div>
                 Is er een cultuur van open communicatie en feedback binnen het team, en zijn teamleden bereid om te leren en te verbeteren?
             </div>
-            <div class="radio-buttons">
-                <label><input type="radio" name="feedback" value="groen"> Groen</label>
-                <label><input type="radio" name="feedback" value="oranje"> Oranje</label>
-                <label><input type="radio" name="feedback" value="rood"> Rood</label>
-            </div>
+            <h5>Selecteer een kleur:</h5>
+            <button id="green-btn">Groen</button>
+            <button id="orange-btn">Oranje</button>
+            <button id="red-btn">Rood</button>
         </div>
 
         <h2>Vraag 5: Samenwerking en communicatie</h2>
@@ -91,11 +78,10 @@
             <div>
                 Is er een effectieve samenwerking en communicatie tussen teamleden, en zijn ze in staat om constructief om te gaan met meningsverschillen?
             </div>
-            <div class="radio-buttons">
-                <label><input type="radio" name="samenwerking" value="groen"> Groen</label>
-                <label><input type="radio" name="samenwerking" value="oranje"> Oranje</label>
-                <label><input type="radio" name="samenwerking" value="rood"> Rood</label>
-            </div>
+            <h5>Selecteer een kleur:</h5>
+            <button id="green-btn">Groen</button>
+            <button id="orange-btn">Oranje</button>
+            <button id="red-btn">Rood</button>
         </div>
 
         <h2>Vraag 6: Werklast en prioriteiten</h2>
@@ -103,11 +89,10 @@
             <div>
                 Is er een evenwichtige werklast en prioriteitstelling binnen het team, en wordt het werk op een efficiënte en effectieve manier uitgevoerd?
             </div>
-            <div class="radio-buttons">
-                <label><input type="radio" name="samenwerking" value="groen"> Groen</label>
-                <label><input type="radio" name="samenwerking" value="oranje"> Oranje</label>
-                <label><input type="radio" name="samenwerking" value="rood"> Rood</label>
-            </div>
+            <h5>Selecteer een kleur:</h5>
+            <button id="green-btn">Groen</button>
+            <button id="orange-btn">Oranje</button>
+            <button id="red-btn">Rood</button>
         </div>
 
         <h2>Vraag 7: Zelforganisatie</h2>
@@ -115,11 +100,10 @@
             <div>
                 Is het team in staat om zichzelf te organiseren en te plannen, zonder de noodzaak van externe sturing?
             </div>
-            <div class="radio-buttons">
-                <label><input type="radio" name="samenwerking" value="groen"> Groen</label>
-                <label><input type="radio" name="samenwerking" value="oranje"> Oranje</label>
-                <label><input type="radio" name="samenwerking" value="rood"> Rood</label>
-            </div>
+            <h5>Selecteer een kleur:</h5>
+            <button id="green-btn">Groen</button>
+            <button id="orange-btn">Oranje</button>
+            <button id="red-btn">Rood</button>
         </div>
 
         <h2>Vraag 8: Veiligheid en inclusie</h2>
@@ -127,12 +111,24 @@
             <div>
                 Voelen teamleden zich veilig en ondersteund in hun werk en is er een cultuur van inclusie en diversiteit?
             </div>
-            <div class="radio-buttons">
-                <label><input type="radio" name="samenwerking" value="groen"> Groen</label>
-                <label><input type="radio" name="samenwerking" value="oranje"> Oranje</label>
-                <label><input type="radio" name="samenwerking" value="rood"> Rood</label>
-            </div>
+            <h5>Selecteer een kleur:</h5>
+            <button id="green-btn">Groen</button>
+            <button id="orange-btn">Oranje</button>
+            <button id="red-btn">Rood</button>
         </div>
+
+        <script>
+            const buttons = document.querySelectorAll("button");
+
+            buttons.forEach(button => {
+                button.addEventListener("click", () => {
+                    buttons.forEach(button => {
+                        button.classList.remove("selected");
+                    });
+                    button.classList.add("selected");
+                });
+            });
+        </script>
     </form>
 </body>
 </html>
