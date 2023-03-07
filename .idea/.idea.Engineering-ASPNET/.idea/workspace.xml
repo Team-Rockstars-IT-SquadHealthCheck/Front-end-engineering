@@ -7,8 +7,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b6e0e025-89c5-4c22-b918-fb582399243f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Engineering-ASPNET/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Engineering-ASPNET/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engineering-ASPNET/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engineering-ASPNET/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engineering-ASPNET/Views/Home/Privacy.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Engineering-ASPNET/Views/Home/Privacy.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engineering-ASPNET/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Engineering-ASPNET/Views/Shared/_Layout.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engineering-ASPNET/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/Engineering-ASPNET/wwwroot/css/site.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +90,7 @@
       <workItem from="1677591428369" duration="1278000" />
       <workItem from="1677744365385" duration="323000" />
       <workItem from="1677744701230" duration="7606000" />
-      <workItem from="1678176399460" duration="1518000" />
+      <workItem from="1678176399460" duration="3195000" />
     </task>
     <task id="LOCAL-00001" summary="Add gitignore and remove unwanted files">
       <created>1677575406223</created>
