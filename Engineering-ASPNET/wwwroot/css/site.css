@@ -101,5 +101,7 @@ button:hover {
 }
 
 .container-fluid {
-  max-width: 1200px;
+  max-width: 1500px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
