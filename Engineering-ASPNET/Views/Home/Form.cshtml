@@ -107,7 +107,9 @@
         <button class="orange-btn">Oké bezig</button>
         <button class="green-btn">Ga zo door!</button>
     </div>
-    <button class="custom-btn">Versturen</button>
+        <a asp-area="" asp-controller="Home" asp-action="BedanktScherm">
+            <button>versturen!</button>
+        </a>
     <script>
             const buttons = document.querySelectorAll("button");
 
