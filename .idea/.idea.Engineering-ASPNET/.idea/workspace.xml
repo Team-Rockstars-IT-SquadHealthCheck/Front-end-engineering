@@ -5,11 +5,7 @@
     <projectFile profileName="https">Engineering-ASPNET/Engineering-ASPNET.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6e0e025-89c5-4c22-b918-fb582399243f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Engineering-ASPNET/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Engineering-ASPNET/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engineering-ASPNET/Views/Home/Form.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Engineering-ASPNET/Views/Home/Form.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engineering-ASPNET/wwwroot/css/form.css" beforeDir="false" afterPath="$PROJECT_DIR$/Engineering-ASPNET/wwwroot/css/form.css" afterDir="false" />
-    </list>
+    <list default="true" id="b6e0e025-89c5-4c22-b918-fb582399243f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -102,6 +98,7 @@
       <workItem from="1678353688214" duration="214000" />
       <workItem from="1678353910790" duration="258000" />
       <workItem from="1678354475284" duration="2479000" />
+      <workItem from="1678363147283" duration="72000" />
     </task>
     <task id="LOCAL-00001" summary="Add gitignore and remove unwanted files">
       <created>1677575406223</created>
