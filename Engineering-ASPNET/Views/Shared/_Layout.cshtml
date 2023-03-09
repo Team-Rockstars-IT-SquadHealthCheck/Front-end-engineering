@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/css/fonts.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/form.css" asp-append-version="true" />
 </head>
 <body>
 <header>
     <nav class="navbar navbar-expand-md navbar-light bg-white">
-        <div class="container">
-            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
                 <img src="@Url.Content("~/images/logo.png")" height="60">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -39,7 +40,7 @@
 
 <footer class="border-top footer text-muted">
     <div class="container">
-        &copy; 2023 - Engineering_ASPNET - <a asp-area="" asp-controller="Home" asp-action="Index">Privacy</a>
+        &copy; 2023 - Engineering_ASPNET - <a asp-area="" asp-controller="Home" asp-action="Form">Squad Health Check</a>
     </div>
 </footer>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>

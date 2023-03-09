@@ -1,107 +1,66 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <title>Rockstars IT | Performance</title>
-    <style>
-        h2 {
-            margin-top: 50px;
-            border-bottom: 2px solid rgba(0, 0, 0, 0.15);
-            padding-bottom: 10px;
-        }
-        p {
-            margin-bottom: 20px;
-        }
-        label {
-            display: block;
-            margin-bottom: 10px;
-        }
-    </style>
-</head>
-<body>
-<h1>Rockstars IT | Performance</h1>
-<form action="#" method="post">
-    <h2>Vraag 1: Doel en visie</h2>
-    <div>
+﻿@using (Html.BeginForm("SubmitHealthcheck", "HomeController", FormMethod.Post))
+{
+    <h1>Squad Health Check</h1>
+    <br>
+    <section>
         <div>
-            Heeft het team duidelijk gedefinieerde doelen en een visie die alle teamleden begrijpen en ondersteunen?
+            <h2>Vraag 1: Doel en visie</h2>
+            <div>
+                Heeft het team duidelijk gedefinieerde doelen en een visie die alle teamleden begrijpen en ondersteunen?
+            </div>
         </div>
-        <h5>Selecteer een beoordeling:</h5>
-        <button class="red-btn">Ruimte voor verbetering</button>
-        <button class="orange-btn">Oké bezig</button>
-        <button class="green-btn">Ga zo door!</button>
-    </div>
-
-    <h2>Vraag 2: Technologie</h2>
-    <div>
         <div>
-            Is de technologie die het team gebruikt up-to-date, goed onderhouden en passend voor het werk dat ze doen?
+            <input type="radio" id="question1_1" name="question1" value="1">
+            <label for="question1_1">
+                <h2>Ga zo door!</h2>
+                <p>Beschrijving placeholder van de gekozen beoordeling.</p>
+            </label>
         </div>
-        <h5>Selecteer een beoordeling:</h5>
-        <button class="red-btn">Ruimte voor verbetering</button>
-        <button class="orange-btn">Oké bezig</button>
-        <button class="green-btn">Ga zo door!</button>
-    </div>
-
-    <h2>Vraag 3: Gezamenlijk eigendom</h2>
-    <div>
         <div>
-            Wordt de verantwoordelijkheid voor werk gedeeld tussen de teamleden en zijn ze allemaal even betrokken bij het succes van het team?
+            <input type="radio" id="question1_2" name="question1" value="2">
+            <label for="question1_2">
+                <h2>Oké bezig</h2>
+                <p>Beschrijving placeholder van de gekozen beoordeling.</p>
+            </label>
         </div>
-        <h5>Selecteer een beoordeling:</h5>
-        <button class="red-btn">Ruimte voor verbetering</button>
-        <button class="orange-btn">Oké bezig</button>
-        <button class="green-btn">Ga zo door!</button>
-    </div>
-
-    <h2>Vraag 4: Feedback en continue verbetering</h2>
-    <div>
         <div>
-            Is er een cultuur van open communicatie en feedback binnen het team, en zijn teamleden bereid om te leren en te verbeteren?
+            <input type="radio" id="question1_3" name="question1" value="3">
+            <label for="question1_3">
+                <h2>Ruimte voor verbetering</h2>
+                <p>Beschrijving placeholder van de gekozen beoordeling.</p>
+            </label>
         </div>
-        <h5>Selecteer een beoordeling:</h5>
-        <button class="red-btn">Ruimte voor verbetering</button>
-        <button class="orange-btn">Oké bezig</button>
-        <button class="green-btn">Ga zo door!</button>
-    </div>
-
-    <h2>Vraag 5: Samenwerking en communicatie</h2>
-    <div>
+    </section>
+    <hr>
+    <section>
         <div>
-            Is er een effectieve samenwerking en communicatie tussen teamleden, en zijn ze in staat om constructief om te gaan met meningsverschillen?
+            <h2>Vraag 2: Technologie</h2>
+            <div>
+                Is de technologie die het team gebruikt up-to-date, goed onderhouden en passend voor het werk dat ze doen?
+            </div>
         </div>
-        <h5>Selecteer een beoordeling:</h5>
-        <button class="red-btn">Ruimte voor verbetering</button>
-        <button class="orange-btn">Oké bezig</button>
-        <button class="green-btn">Ga zo door!</button>
-    </div>
-
-    <h2>Vraag 6: Werklast en prioriteiten</h2>
-    <div>
         <div>
-            Is er een evenwichtige werklast en prioriteitstelling binnen het team, en wordt het werk op een efficiënte en effectieve manier uitgevoerd?
+            <input type="radio" id="question2_1" name="question2" value="1">
+            <label for="question2_1">
+                <h2>Ga zo door!</h2>
+                <p>Beschrijving placeholder van de gekozen beoordeling.</p>
+            </label>
         </div>
-        <h5>Selecteer een beoordeling:</h5>
-        <button class="red-btn">Ruimte voor verbetering</button>
-        <button class="orange-btn">Oké bezig</button>
-        <button class="green-btn">Ga zo door!</button>
-    </div>
-
-    <h2>Vraag 7: Zelforganisatie</h2>
-    <div>
         <div>
-            Is het team in staat om zichzelf te organiseren en te plannen, zonder de noodzaak van externe sturing?
+            <input type="radio" id="question2_2" name="question2" value="2">
+            <label for="question2_2">
+                <h2>Oké bezig</h2>
+                <p>Beschrijving placeholder van de gekozen beoordeling.</p>
+            </label>
         </div>
-        <h5>Selecteer een beoordeling:</h5>
-        <button class="red-btn">Ruimte voor verbetering</button>
-        <button class="orange-btn">Oké bezig</button>
-        <button class="green-btn">Ga zo door!</button>
-    </div>
-
-    <h2>Vraag 8: Veiligheid en inclusie</h2>
-    <div>
         <div>
-            Voelen teamleden zich veilig en ondersteund in hun werk en is er een cultuur van inclusie en diversiteit?
+            <input type="radio" id="question2_3" name="question2" value="3">
+            <label for="question2_3">
+                <h2>Ruimte voor verbetering</h2>
+                <p>Beschrijving placeholder van de gekozen beoordeling.</p>
+            </label>
         </div>
+<<<<<<< HEAD
         <h5>Selecteer een beoordeling:</h5>
         <button class="red-btn">Ruimte voor verbetering</button>
         <button class="orange-btn">Oké bezig</button>
@@ -125,3 +84,189 @@
 </form>
 </body>
 </html>
+=======
+    </section>
+    <hr>
+    <section>
+        <div>
+            <h2>Vraag 3: Gezamenlijk eigendom</h2>
+            <div>
+                Wordt de verantwoordelijkheid voor werk gedeeld tussen de teamleden en zijn ze allemaal even betrokken bij het succes van het team?
+            </div>
+        </div>
+        <div>
+            <input type="radio" id="question3_1" name="question3" value="1">
+            <label for="question3_1">
+                <h2>Ga zo door!</h2>
+                <p>Beschrijving placeholder van de gekozen beoordeling.</p>
+            </label>
+        </div>
+        <div>
+            <input type="radio" id="question3_2" name="question3" value="2">
+            <label for="question3_2">
+                <h2>Oké bezig</h2>
+                <p>Beschrijving placeholder van de gekozen beoordeling.</p>
+            </label>
+        </div>
+        <div>
+            <input type="radio" id="question3_3" name="question3" value="3">
+            <label for="question3_3">
+                <h2>Ruimte voor verbetering</h2>
+                <p>Beschrijving placeholder van de gekozen beoordeling.</p>
+            </label>
+        </div>
+    </section>
+    <hr>
+    <section>
+        <div>
+            <h2>Vraag 4: Feedback en continue verbetering</h2>
+            <div>
+                Is er een cultuur van open communicatie en feedback binnen het team, en zijn teamleden bereid om te leren en te verbeteren?
+            </div>
+        </div>
+        <div>
+            <input type="radio" id="question4_1" name="question4" value="1">
+            <label for="question4_1">
+                <h2>Ga zo door!</h2>
+                <p>Beschrijving placeholder van de gekozen beoordeling.</p>
+            </label>
+        </div>
+        <div>
+            <input type="radio" id="question4_2" name="question4" value="2">
+            <label for="question4_2">
+                <h2>Oké bezig</h2>
+                <p>Beschrijving placeholder van de gekozen beoordeling.</p>
+            </label>
+        </div>
+        <div>
+            <input type="radio" id="question4_3" name="question4" value="3">
+            <label for="question4_3">
+                <h2>Ruimte voor verbetering</h2>
+                <p>Beschrijving placeholder van de gekozen beoordeling.</p>
+            </label>
+        </div>
+    </section>
+    <hr>
+    <section>
+        <div>
+            <h2>Vraag 5: Samenwerking en communicatie</h2>
+            <div>
+                Is er een effectieve samenwerking en communicatie tussen teamleden, en zijn ze in staat om constructief om te gaan met meningsverschillen?
+            </div>
+        </div>
+        <div>
+            <input type="radio" id="question5_1" name="question5" value="1">
+            <label for="question5_1">
+                <h2>Ga zo door!</h2>
+                <p>Beschrijving placeholder van de gekozen beoordeling.</p>
+            </label>
+        </div>
+        <div>
+            <input type="radio" id="question5_2" name="question5" value="2">
+            <label for="question5_2">
+                <h2>Oké bezig</h2>
+                <p>Beschrijving placeholder van de gekozen beoordeling.</p>
+            </label>
+        </div>
+        <div>
+            <input type="radio" id="question5_3" name="question5" value="3">
+            <label for="question5_3">
+                <h2>Ruimte voor verbetering</h2>
+                <p>Beschrijving placeholder van de gekozen beoordeling.</p>
+            </label>
+        </div>
+    </section>
+    <hr>
+    <section>
+        <div>
+            <h2>Vraag 6: Werklast en prioriteiten</h2>
+            <div>
+                Is er een evenwichtige werklast en prioriteitstelling binnen het team, en wordt het werk op een efficiënte en effectieve manier uitgevoerd?
+            </div>
+        </div>
+        <div>
+            <input type="radio" id="question6_1" name="question6" value="1">
+            <label for="question6_1">
+                <h2>Ga zo door!</h2>
+                <p>Beschrijving placeholder van de gekozen beoordeling.</p>
+            </label>
+        </div>
+        <div>
+            <input type="radio" id="question6_2" name="question6" value="2">
+            <label for="question6_2">
+                <h2>Oké bezig</h2>
+                <p>Beschrijving placeholder van de gekozen beoordeling.</p>
+            </label>
+        </div>
+        <div>
+            <input type="radio" id="question6_3" name="question6" value="3">
+            <label for="question6_3">
+                <h2>Ruimte voor verbetering</h2>
+                <p>Beschrijving placeholder van de gekozen beoordeling.</p>
+            </label>
+        </div>
+    </section>
+    <hr>
+    <section>
+        <div>
+            <h2>Vraag 7: Zelforganisatie</h2>
+            <div>
+                Is het team in staat om zichzelf te organiseren en te plannen, zonder de noodzaak van externe sturing?
+            </div>
+        </div>
+        <div>
+            <input type="radio" id="question7_1" name="question7" value="1">
+            <label for="question7_1">
+                <h2>Ga zo door!</h2>
+                <p>Beschrijving placeholder van de gekozen beoordeling.</p>
+            </label>
+        </div>
+        <div>
+            <input type="radio" id="question7_2" name="question7" value="2">
+            <label for="question7_2">
+                <h2>Oké bezig</h2>
+                <p>Beschrijving placeholder van de gekozen beoordeling.</p>
+            </label>
+        </div>
+        <div>
+            <input type="radio" id="question7_3" name="question7" value="3">
+            <label for="question7_3">
+                <h2>Ruimte voor verbetering</h2>
+                <p>Beschrijving placeholder van de gekozen beoordeling.</p>
+            </label>
+        </div>
+    </section>
+    <hr>
+    <section>
+        <div>
+            <h2>Vraag 8: Veiligheid en inclusie</h2>
+            <div>
+                Voelen teamleden zich veilig en ondersteund in hun werk en is er een cultuur van inclusie en diversiteit?
+            </div>
+        </div>
+        <div>
+            <input type="radio" id="question8_1" name="question8" value="1">
+            <label for="question8_1">
+                <h2>Ga zo door!</h2>
+                <p>Beschrijving placeholder van de gekozen beoordeling.</p>
+            </label>
+        </div>
+        <div>
+            <input type="radio" id="question8_2" name="question8" value="2">
+            <label for="question8_2">
+                <h2>Oké bezig</h2>
+                <p>Beschrijving placeholder van de gekozen beoordeling.</p>
+            </label>
+        </div>
+        <div>
+            <input type="radio" id="question8_3" name="question8" value="3">
+            <label for="question8_3">
+                <h2>Ruimte voor verbetering</h2>
+                <p>Beschrijving placeholder van de gekozen beoordeling.</p>
+            </label>
+        </div>
+    </section>
+    <hr>
+    <button type="submit">Verstuur</button>
+}
+>>>>>>> 563dd2454c80dfe4c3d3e66fefa87db11697b644
