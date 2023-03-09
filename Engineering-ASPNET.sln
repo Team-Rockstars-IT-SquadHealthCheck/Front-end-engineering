@@ -1,6 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Engineering-ASPNET", "Engineering-ASPNET\Engineering-ASPNET.csproj", "{9A27C311-EB52-4A33-BBEF-A5050E2D1275}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Engineering-ASPNET", "Engineering-ASPNET\Engineering-ASPNET.csproj", "{9A27C311-EB52-4A33-BBEF-A5050E2D1275}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +15,11 @@ Global
 		{9A27C311-EB52-4A33-BBEF-A5050E2D1275}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A27C311-EB52-4A33-BBEF-A5050E2D1275}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A27C311-EB52-4A33-BBEF-A5050E2D1275}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D906CA29-7555-4B6D-9102-35C780118ADE}
 	EndGlobalSection
 EndGlobal
