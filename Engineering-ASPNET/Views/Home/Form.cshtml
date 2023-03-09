@@ -60,31 +60,6 @@
                 <p>Beschrijving placeholder van de gekozen beoordeling.</p>
             </label>
         </div>
-<<<<<<< HEAD
-        <h5>Selecteer een beoordeling:</h5>
-        <button class="red-btn">Ruimte voor verbetering</button>
-        <button class="orange-btn">Oké bezig</button>
-        <button class="green-btn">Ga zo door!</button>
-    </div>
-        <a asp-area="" asp-controller="Home" asp-action="BedanktScherm">
-            <button>versturen!</button>
-        </a>
-    <script>
-            const buttons = document.querySelectorAll("button");
-
-            buttons.forEach(button => {
-                button.addEventListener("click", () => {
-                    buttons.forEach(button => {
-                        button.classList.remove("selected");
-                    });
-                    button.classList.add("selected");
-                });
-            });
-        </script>
-</form>
-</body>
-</html>
-=======
     </section>
     <hr>
     <section>
@@ -267,6 +242,8 @@
         </div>
     </section>
     <hr>
-    <button type="submit">Verstuur</button>
+        <a asp-area="" asp-controller="Home" asp-action="BedanktScherm">
+            <button>versturen!</button>
+        </a>
 }
 >>>>>>> 563dd2454c80dfe4c3d3e66fefa87db11697b644
