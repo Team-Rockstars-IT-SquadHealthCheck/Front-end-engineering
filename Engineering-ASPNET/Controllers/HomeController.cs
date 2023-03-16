@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Engineering_ASPNET.Models;
 using Microsoft.Extensions.Logging;
+using System.Collections;
+using System;
 
 namespace Engineering_ASPNET.Controllers;
 
@@ -24,6 +26,17 @@ public class HomeController : Controller
         return View();
     }
 
+    [HttpPost]
+    public IActionResult Form(FormSubmissionModel model)
+    {
+
+        if (ModelState.IsValid)
+        {
+            return RedirectToAction(nameof(BedanktScherm));
+        }
+        
+        return View();
+    }
     public IActionResult BedanktScherm()
     {
         return View();
