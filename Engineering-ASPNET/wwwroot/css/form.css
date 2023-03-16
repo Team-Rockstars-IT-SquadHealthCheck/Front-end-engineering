@@ -61,6 +61,22 @@ input[type="radio"]:checked + label p {
 
 /*Question 1*/
 
+.groen {
+    color: #00d46b !important;
+}
+
+.oranje {
+    color: #FF9803 !important;
+}
+
+.rood {
+    color: #ff6235 !important;
+}
+
+.rode-fade {
+    background-color: rgba(255, 98, 53, 0.1);
+}
+
 input[type="radio"]#question1_1:not(:checked) + label {
     border: 2px solid #00d46b;
 }

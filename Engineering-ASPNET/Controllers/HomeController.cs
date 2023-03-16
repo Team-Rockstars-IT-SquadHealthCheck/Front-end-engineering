@@ -33,6 +33,7 @@ public class HomeController : Controller
         if (ModelState.IsValid)
         {
             return RedirectToAction(nameof(BedanktScherm));
+            
         }
         
         return View();

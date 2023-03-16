@@ -8,8 +8,6 @@
     <list default="true" id="b6e0e025-89c5-4c22-b918-fb582399243f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Engineering-ASPNET/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Engineering-ASPNET/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engineering-ASPNET/Views/Home/Form.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Engineering-ASPNET/Views/Home/Form.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engineering-ASPNET/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Engineering-ASPNET/Views/Home/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Engineering-ASPNET/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/Engineering-ASPNET/wwwroot/css/site.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +95,18 @@
       <workItem from="1678181865259" duration="974000" />
       <workItem from="1678183056643" duration="1617000" />
       <workItem from="1678190806320" duration="91000" />
-      <workItem from="1678190900416" duration="1941000" />
+      <workItem from="1678190900416" duration="2755000" />
+      <workItem from="1678262766190" duration="1000" />
+      <workItem from="1678349981470" duration="348000" />
+      <workItem from="1678353688214" duration="214000" />
+      <workItem from="1678353910790" duration="258000" />
+      <workItem from="1678354475284" duration="2479000" />
+      <workItem from="1678363147283" duration="72000" />
+      <workItem from="1678363222244" duration="896000" />
+      <workItem from="1678779989375" duration="101000" />
+      <workItem from="1678780094465" duration="266000" />
+      <workItem from="1678790299836" duration="1087000" />
+      <workItem from="1678796433921" duration="245000" />
     </task>
     <task id="LOCAL-00001" summary="Add gitignore and remove unwanted files">
       <created>1677575406223</created>
