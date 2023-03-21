@@ -32,10 +32,8 @@
 
 @{
     ViewData["Title"] = "Home Front Page";
-    HttpClient httpClient = new();
-    string httpResponseMessage = await httpClient.GetStringAsync("http://40.113.119.8:80/HelloWorld");
-    Console.WriteLine(httpResponseMessage);
+    var v = ViewData["httpResponseMessage"];
 }
-<p>@httpResponseMessage</p>
+<p>@v</p>
 
 

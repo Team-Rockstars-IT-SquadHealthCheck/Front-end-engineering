@@ -12,23 +12,22 @@ public enum Grading
 public class FormSubmissionModel
 {
     [Required]
-    public Grading? Question1 { get; set; }
+    public int? Question1 { get; set; }
     [Required]
-    public Grading? Question2 { get; set; }
+    public int? Question2 { get; set; }
     [Required]
-    public Grading? Question3 { get; set; }
+    public int? Question3 { get; set; }
     [Required]
-    public Grading? Question4 { get; set; }
+    public int? Question4 { get; set; }
     [Required]
-    public Grading? Question5 { get; set; }
+    public int? Question5 { get; set; }
     [Required]
-    public Grading? Question6 { get; set; }
+    public int? Question6 { get; set; }
     [Required]
-    public Grading? Question7 { get; set; }
+    public int? Question7 { get; set; }
     [Required]
-    public Grading? Question8 { get; set; }
+    public int? Question8 { get; set; }
     //Link? Id?
     public string Guid { get; set; } = "";
-    
-    
+
 }
