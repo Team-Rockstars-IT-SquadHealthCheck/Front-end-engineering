@@ -4,22 +4,26 @@ using Engineering_ASPNET.Models;
 using Microsoft.Extensions.Logging;
 using System.Collections;
 using System;
+using Engineering_ASPNET.BLL;
+using Engineering_ASPNET.DAL;
 
 namespace Engineering_ASPNET.Controllers;
 
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly HomeService _homeService;
 
     public HomeController(ILogger<HomeController> logger)
     {
+        _homeService = new HomeService();
         _logger = logger;
     }
 
-    public async Task<IActionResult> Index()
+    public IActionResult Index()
     {
-        HttpClient httpClient = new();
-        string httpResponseMessage = await httpClient.GetStringAsync("http://40.113.119.8:80/HelloWorld");
+        HelloWorld helloWorld = _homeService.HelloWorld();
+        string httpResponseMessage = helloWorld.httpResponseMessage;
         Console.WriteLine(httpResponseMessage);
         ViewData["httpResponseMessage"] = httpResponseMessage;
         return View();
