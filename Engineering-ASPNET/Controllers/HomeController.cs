@@ -19,9 +19,9 @@ public class HomeController : Controller
     public async Task<IActionResult> Index()
     {
         HttpClient httpClient = new();
-        //string httpResponseMessage = await httpClient.GetStringAsync("http://40.113.119.8:80/HelloWorld");
-        //Console.WriteLine(httpResponseMessage);
-        //ViewData["httpResponseMessage"] = httpResponseMessage;
+        string httpResponseMessage = await httpClient.GetStringAsync("http://40.113.119.8:80/HelloWorld");
+        Console.WriteLine(httpResponseMessage);
+        ViewData["httpResponseMessage"] = httpResponseMessage;
         return View();
     }
 
