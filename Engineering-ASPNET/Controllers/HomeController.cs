@@ -16,8 +16,12 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
+        HttpClient httpClient = new();
+        //string httpResponseMessage = await httpClient.GetStringAsync("http://40.113.119.8:80/HelloWorld");
+        //Console.WriteLine(httpResponseMessage);
+        //ViewData["httpResponseMessage"] = httpResponseMessage;
         return View();
     }
 
@@ -27,16 +31,16 @@ public class HomeController : Controller
     }
 
     [HttpPost]
+    [ValidateAntiForgeryToken]
     public IActionResult Form(FormSubmissionModel model)
     {
-
-        if (ModelState.IsValid)
+        if (!ModelState.IsValid)
         {
-            return RedirectToAction(nameof(BedanktScherm));
-            
+            string validation = "Je moet alles invullen!";
+            ViewData["validationMessage"] = validation;
+            return View(model);
         }
-        
-        return View();
+        return RedirectToAction(nameof(BedanktScherm));
     }
     public IActionResult BedanktScherm()
     {
