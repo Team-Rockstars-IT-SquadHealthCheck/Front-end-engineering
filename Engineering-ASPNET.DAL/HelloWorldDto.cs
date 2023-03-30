@@ -8,6 +8,6 @@ namespace Engineering_ASPNET.DAL
 {
     public class HelloWorldDto
     {
-        public string? httpResponseMessage { get; set; }
+        public string httpResponseMessage { get; set; }
     }
 }

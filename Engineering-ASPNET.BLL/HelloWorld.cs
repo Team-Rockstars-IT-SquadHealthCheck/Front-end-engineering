@@ -8,6 +8,6 @@ namespace Engineering_ASPNET.BLL
 {
     public class HelloWorld
     {
-        public string? httpResponseMessage { get; set; }
+        public string httpResponseMessage { get; set; }
     }
 }

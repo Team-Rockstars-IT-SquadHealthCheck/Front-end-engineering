@@ -21,5 +21,24 @@ namespace Engineering_ASPNET.BLL
             };
             return helloWorld;
         }
+
+        public void SubmitAnswers(IEnumerable<AnswerModel> answers)
+        {
+            List<AnswerDto> answerDtos = new List<AnswerDto>();
+
+            foreach (var answer in answers)
+            {
+                AnswerDto answerDto = new AnswerDto
+                {
+                    QuestionId = answer.QuestionId,
+                    UserId = answer.UserId,
+                    Answer = answer.Answer,
+                    Comment = answer.Comment
+                };
+                answerDtos.Add(answerDto);
+            }
+        _repository.SubmitAnswers(answerDtos);
+
+        }
     }
 }
