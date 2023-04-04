@@ -19,10 +19,19 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+<<<<<<< HEAD
         //HelloWorld helloWorld = _homeService.HelloWorld();
         //string httpResponseMessage = helloWorld.httpResponseMessage;
         //Console.WriteLine(httpResponseMessage);
         //ViewData["httpResponseMessage"] = httpResponseMessage;
+=======
+        /*
+        HelloWorld helloWorld = _homeService.HelloWorld();
+        string httpResponseMessage = helloWorld.httpResponseMessage;
+        Console.WriteLine(httpResponseMessage);
+        ViewData["httpResponseMessage"] = httpResponseMessage;
+        */
+>>>>>>> 895c6cafd65640d83a0502727d452e680edc79ad
         return View();
     }
 
