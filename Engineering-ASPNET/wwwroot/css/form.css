@@ -232,7 +232,7 @@ input[type="radio"]#average2:not(:checked) + label {
 
 input[type="radio"]#bad2:not(:checked) + label {
     border: 2px solid #ff6235;
-    color #ffffff;
+    color: #ffffff;
 }
 
 /*Knop ingedrukt: */

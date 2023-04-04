@@ -8,6 +8,10 @@ html {
     }
 }
 
+.navbar{
+    background-color: #f5f5f5 !important;
+}
+
 .btn:focus,
 .btn:active:focus,
 .btn-link.nav-link:focus,
