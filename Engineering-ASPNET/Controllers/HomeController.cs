@@ -22,7 +22,7 @@ public class HomeController : Controller
        // HelloWorld helloWorld = _homeService.HelloWorld();
        // string httpResponseMessage = helloWorld.httpResponseMessage;
        // Console.WriteLine(httpResponseMessage);
-       // ViewData["httpResponseMessage"] = httpResponseMessage;
+      // ViewData["httpResponseMessage"] = httpResponseMessage;
         return View();
     }
 
