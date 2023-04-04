@@ -6,8 +6,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6e0e025-89c5-4c22-b918-fb582399243f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Engineering-ASPNET/wwwroot/images/silicon-airport.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Engineering-ASPNET/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Engineering-ASPNET/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engineering-ASPNET/Controllers/HomeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Engineering-ASPNET/Controllers/HomeController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engineering-ASPNET/Views/Home/Form.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Engineering-ASPNET/Views/Home/Form.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engineering-ASPNET/Views/Home/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Engineering-ASPNET/Views/Home/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engineering-ASPNET/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Engineering-ASPNET/Views/Shared/_Layout.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engineering-ASPNET/wwwroot/css/form.css" beforeDir="false" afterPath="$PROJECT_DIR$/Engineering-ASPNET/wwwroot/css/form.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engineering-ASPNET/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/Engineering-ASPNET/wwwroot/css/site.css" afterDir="false" />
@@ -114,7 +117,8 @@
       <workItem from="1679387256492" duration="1313000" />
       <workItem from="1680166363600" duration="1686000" />
       <workItem from="1680257394855" duration="2317000" />
-      <workItem from="1680592024587" duration="15000" />
+      <workItem from="1680592024587" duration="3929000" />
+      <workItem from="1680595963335" duration="266000" />
     </task>
     <task id="LOCAL-00001" summary="Add gitignore and remove unwanted files">
       <created>1677575406223</created>
