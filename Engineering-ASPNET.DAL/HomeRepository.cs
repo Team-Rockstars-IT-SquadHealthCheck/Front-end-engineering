@@ -1,20 +1,21 @@
-﻿using Newtonsoft.Json;
+﻿using Engineering_ASPNET.BLL;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace Engineering_ASPNET.DAL
 {
-    public class HomeRepository
+    public class HomeRepository : IHomeRepository
     {
-        public async Task<HelloWorldDto> HelloWorld()
+        public async Task<HelloWorld> HelloWorld()
         {
             HttpClient httpClient = new();
-            HelloWorldDto helloWorldDto = new HelloWorldDto();
+            HelloWorld helloWorldDto = new HelloWorld();
             helloWorldDto.httpResponseMessage = await httpClient.GetStringAsync("https://localhost:32770/HelloWorld");
             return helloWorldDto;
         }
 
-        public async void SubmitAnswers(IEnumerable<AnswerDto> answers)
+        public async void SubmitAnswers(IEnumerable<AnswerModel> answers)
         {
             HttpClient httpClient = new();
             string json = JsonConvert.SerializeObject(answers);

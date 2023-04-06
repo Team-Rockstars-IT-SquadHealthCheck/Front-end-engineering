@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Engineering_ASPNET.DAL
 {
-    public class QuestionDto
+    public class Question
     {
         public int Question_ID { get; set; }
         public int Survey_ID { get; set; } 

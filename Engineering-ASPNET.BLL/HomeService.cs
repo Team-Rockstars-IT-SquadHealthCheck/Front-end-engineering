@@ -8,16 +8,16 @@ namespace Engineering_ASPNET.BLL
 {
     public class HomeService
     {
-        private readonly HomeRepository _repository;
-        public HomeService()
+        private readonly IHomeRepository _repository;
+        public HomeService(IHomeRepository repository)
         {
-            _repository = new HomeRepository();
+            _repository = repository;
         }
         public HelloWorld HelloWorld()
         {
-            Task<HelloWorldDto> taskHelloWorldDto = _repository.HelloWorld();
+            Task<HelloWorld> taskHelloWorldDto = _repository.HelloWorld();
             taskHelloWorldDto.Wait();
-            HelloWorldDto helloWorldDto = taskHelloWorldDto.Result;
+            HelloWorld helloWorldDto = taskHelloWorldDto.Result;
             HelloWorld helloWorld = new HelloWorld
             {
                 httpResponseMessage = helloWorldDto.httpResponseMessage
@@ -27,11 +27,11 @@ namespace Engineering_ASPNET.BLL
 
         public void SubmitAnswers(IEnumerable<AnswerModel> answers)
         {
-            List<AnswerDto> answerDtos = new List<AnswerDto>();
+            List<AnswerModel> answerDtos = new List<AnswerModel>();
 
             foreach (var answer in answers)
             {
-                AnswerDto answerDto = new AnswerDto
+                AnswerModel answerDto = new AnswerModel
                 {
                     QuestionId = answer.QuestionId,
                     UserId = answer.UserId,
@@ -43,10 +43,10 @@ namespace Engineering_ASPNET.BLL
             _repository.SubmitAnswers(answerDtos);
 
         }
-        public IEnumerable<SurveyDto> GetSurveys()
+        public IEnumerable<Survey> GetSurveys()
         {
             Task<string> surveysString = _repository.GetSurveys();
-            List<SurveyDto> surveyDtos = new List<SurveyDto>();
+            List<Survey> surveyDtos = new List<Survey>();
             surveysString.Wait();
             string surveysJson = surveysString.Result;
             JObject obj = JObject.Parse(surveysJson);
@@ -55,12 +55,12 @@ namespace Engineering_ASPNET.BLL
             {
                 var QuestionsArray = survey["questions"].Value<JArray>();
 
-                SurveyDto surveyDto = new SurveyDto
+                Survey surveyDto = new Survey
                 {
                     Survey_ID = (int)survey["id"],
                     Description = (string)survey["name"],
                     Name = (string)survey["description"],
-                    Questions = QuestionsArray.ToObject<List<QuestionDto>>()
+                    Questions = QuestionsArray.ToObject<List<Question>>()
                 };
                 surveyDtos.Add(surveyDto);
             };

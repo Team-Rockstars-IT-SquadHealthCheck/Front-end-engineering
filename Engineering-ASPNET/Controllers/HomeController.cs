@@ -1,4 +1,5 @@
 ﻿using Engineering_ASPNET.BLL;
+using Engineering_ASPNET.DAL;
 using Engineering_ASPNET.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -13,7 +14,7 @@ public class HomeController : Controller
 
     public HomeController(ILogger<HomeController> logger)
     {
-        _homeService = new HomeService();
+        _homeService = new HomeService(new HomeRepository());
         _logger = logger;
     }
 
