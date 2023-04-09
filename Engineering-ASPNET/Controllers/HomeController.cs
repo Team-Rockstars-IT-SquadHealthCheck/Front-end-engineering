@@ -18,23 +18,27 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    public IActionResult Index()
+    public IActionResult Index(string id)
     {
         //HelloWorld helloWorld = _homeService.HelloWorld();
         //string httpResponseMessage = helloWorld.httpResponseMessage;
         //Console.WriteLine(httpResponseMessage);
         //ViewData["httpResponseMessage"] = httpResponseMessage;
-        return View();
-    }
+        FormSubmissionModel model = new FormSubmissionModel();
 
-    public IActionResult Form()
+        model.Guid = id;
+        return View(model);
+    }
+    public IActionResult Form(string id)
     {
-        return View();
+        FormSubmissionModel model = new FormSubmissionModel();
+        model.Guid=id;
+        return View(model);
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult Form(FormSubmissionModel model)
+    public IActionResult Form(FormSubmissionModel model, string id)
     {
         if (!ModelState.IsValid)
         {
@@ -55,7 +59,7 @@ public class HomeController : Controller
                 QuestionId = questionid,
                 UserId = 1, // temprary for test
                 Answer = question.Value,
-                Comment = "" // for now empty
+                Comment = id // for now empty
             };
             answers.Add(answer);
         }
