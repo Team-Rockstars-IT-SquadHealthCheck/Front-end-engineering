@@ -59,7 +59,7 @@ public class HomeController : Controller
                 QuestionId = questionid,
                 UserId = 1, // temprary for test
                 Answer = question.Value,
-                Comment = id // for now empty
+                Comment = "" // for now empty
             };
             answers.Add(answer);
         }
