@@ -25,7 +25,6 @@ public class HomeController : Controller
         //Console.WriteLine(httpResponseMessage);
         //ViewData["httpResponseMessage"] = httpResponseMessage;
         FormSubmissionModel model = new FormSubmissionModel();
-
         model.Guid = id;
         return View(model);
     }
