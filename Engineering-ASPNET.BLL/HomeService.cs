@@ -1,5 +1,6 @@
 ﻿using Engineering_ASPNET.DAL;
 using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Reflection.Metadata.Ecma335;
@@ -67,5 +68,31 @@ namespace Engineering_ASPNET.BLL
             return surveyDtos;
         }
 
+        public Link ValidateID(string id)
+        {
+
+            if (id.Count(s => s == ',') == 2)
+            {
+                return ConvertLinkBy(id);
+            }
+            else
+            {
+                Link link = new Link();
+                return link;
+            }
+        }
+
+        public Link ConvertLinkBy(string id)
+        {
+            Link link = new Link();
+            string[] ids = id.Split('&');
+
+            link.UUID = ids[0];
+            link.Squad_ID = ids[1];
+            link.Company_ID = ids[2];
+
+            _repository.ValidateID(link);
+            return link;
+        }
     }
 }

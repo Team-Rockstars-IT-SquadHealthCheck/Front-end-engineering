@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 
@@ -29,7 +28,6 @@ public class FormSubmissionModel
     [Required]
     public int? Question8 { get; set; }
     //Link? Id?
-    [ValidateNever]
     public string Guid { get; set; } = "";
 
 }

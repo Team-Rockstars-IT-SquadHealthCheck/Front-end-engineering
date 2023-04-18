@@ -18,20 +18,32 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    public IActionResult Index(string id)
+    public IActionResult Index(string id, FormSubmissionModel model)
     {
-        //HelloWorld helloWorld = _homeService.HelloWorld();
-        //string httpResponseMessage = helloWorld.httpResponseMessage;
-        //Console.WriteLine(httpResponseMessage);
-        //ViewData["httpResponseMessage"] = httpResponseMessage;
-        FormSubmissionModel model = new FormSubmissionModel();
+        HelloWorld helloWorld = _homeService.HelloWorld();
+        string httpResponseMessage = helloWorld.httpResponseMessage;
+        Console.WriteLine(httpResponseMessage);
+        ViewData["httpResponseMessage"] = httpResponseMessage;
         model.Guid = id;
         return View(model);
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public IActionResult Index(string id)
+    {
+        if (id != null)
+        {
+            _homeService.ValidateID(id);
+            return RedirectToAction("Form", "Home", new { id } );
+        }
+        return View(id);
     }
     public IActionResult Form(string id)
     {
         FormSubmissionModel model = new FormSubmissionModel();
-        model.Guid=id;
+        model.Guid = id;
+        
         return View(model);
     }
 
@@ -39,11 +51,12 @@ public class HomeController : Controller
     [ValidateAntiForgeryToken]
     public IActionResult Form(FormSubmissionModel model, string id)
     {
+        Link link = _homeService.ConvertLinkBy(id);
         if (!ModelState.IsValid)
         {
             string validation = "Je moet alles invullen!";
             ViewData["validationMessage"] = validation;
-            return View();
+            return View(model);
         }
         PropertyInfo[] modelProperties = model.GetType().GetProperties();
         List<int?> questionValues = GetAnswers(model);

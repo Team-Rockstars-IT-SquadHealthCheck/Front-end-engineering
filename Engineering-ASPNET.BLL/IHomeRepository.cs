@@ -11,13 +11,8 @@ namespace Engineering_ASPNET.BLL
     public interface IHomeRepository
     {
         Task<HelloWorld> HelloWorld();
-
-
-
         void SubmitAnswers(IEnumerable<AnswerModel> answers);
-
-
-
         Task<string> GetSurveys();
+        void ValidateID(Link link);
     }
 }
