@@ -34,7 +34,7 @@ public class HomeController : Controller
     {
         if (id != null)
         {
-            _homeService.ValidateID(id);
+            //_homeService.ValidateID(id);
             return RedirectToAction("Form", "Home", new { id } );
         }
         return View(id);
@@ -51,7 +51,7 @@ public class HomeController : Controller
     [ValidateAntiForgeryToken]
     public IActionResult Form(FormSubmissionModel model, string id)
     {
-        Link link = _homeService.ConvertLinkBy(id);
+        
         if (!ModelState.IsValid)
         {
             string validation = "Je moet alles invullen!";

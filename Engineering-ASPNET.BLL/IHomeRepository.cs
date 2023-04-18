@@ -13,6 +13,6 @@ namespace Engineering_ASPNET.BLL
         Task<HelloWorld> HelloWorld();
         void SubmitAnswers(IEnumerable<AnswerModel> answers);
         Task<string> GetSurveys();
-        void ValidateID(Link link);
+        Task<string> ValidateID(string id);
     }
 }
