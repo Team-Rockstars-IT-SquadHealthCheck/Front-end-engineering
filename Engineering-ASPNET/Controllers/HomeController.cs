@@ -1,4 +1,5 @@
 ﻿using Engineering_ASPNET.BLL;
+using Engineering_ASPNET.DAL;
 using Engineering_ASPNET.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -13,12 +14,13 @@ public class HomeController : Controller
 
     public HomeController(ILogger<HomeController> logger)
     {
-        _homeService = new HomeService();
+        _homeService = new HomeService(new HomeRepository());
         _logger = logger;
     }
 
-    public IActionResult Index()
+    public IActionResult Index(string id, FormSubmissionModel model)
     {
+<<<<<<< HEAD
      /*   HelloWorld helloWorld = _homeService.HelloWorld();
         string httpResponseMessage = helloWorld.httpResponseMessage;
         Console.WriteLine(httpResponseMessage);
@@ -29,17 +31,45 @@ public class HomeController : Controller
     public IActionResult Form()
     {
         return View();
+=======
+        HelloWorld helloWorld = _homeService.HelloWorld();
+        string httpResponseMessage = helloWorld.httpResponseMessage;
+        Console.WriteLine(httpResponseMessage);
+        ViewData["httpResponseMessage"] = httpResponseMessage;
+        model.Guid = id;
+        return View(model);
+>>>>>>> 90436f1c8841f54625b7444215c0b6635cf3bbf9
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult Form(FormSubmissionModel model)
+    public IActionResult Index(string id)
     {
+        if (id != null)
+        {
+            //_homeService.ValidateID(id);
+            return RedirectToAction("Form", "Home", new { id } );
+        }
+        return View(id);
+    }
+    public IActionResult Form(string id)
+    {
+        FormSubmissionModel model = new FormSubmissionModel();
+        model.Guid = id;
+        
+        return View(model);
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public IActionResult Form(FormSubmissionModel model, string id)
+    {
+        
         if (!ModelState.IsValid)
         {
             string validation = "Je moet alles invullen!";
             ViewData["validationMessage"] = validation;
-            return View();
+            return View(model);
         }
         PropertyInfo[] modelProperties = model.GetType().GetProperties();
         List<int?> questionValues = GetAnswers(model);

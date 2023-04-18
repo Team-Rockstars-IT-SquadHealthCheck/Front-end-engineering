@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model FormSubmissionModel
+<!DOCTYPE html>
 <html lang="en">
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 <head>
@@ -23,9 +24,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <form asp-controller="Home" asp-action="Form" method="get">
-                            <button type="submit">Ga naar formulier</button>
-                        </form>
+                            @if (Model != null)
+                            {
+                                <a asp-controller="Home" asp-action="Form" asp-route-id="@Model.Guid">
+                                    <button>Ga naar Formulier</button>
+                                </a>
+                            }
+                            @if (Model == null)
+                            {
+                                <a asp-controller="Home" asp-action="Form" asp-route-id="">
+                                    <button>Ga naar Formulier</button>
+                                </a>
+                            }
+
                     </li>
                 </ul>
             </div>

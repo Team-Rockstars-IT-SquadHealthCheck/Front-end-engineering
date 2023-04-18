@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model FormSubmissionModel
+<!DOCTYPE html>
 <html>
 <head>
     <title>WELKOM</title>
@@ -24,9 +25,14 @@
     We willen benadrukken dat de vragenlijst niet voor verdere doeleinde en dat de antwoorden alleen worden gebruikt om ons te helpen het team te verbeteren.
     We stellen je deelname zeer op prijs en hopen dat je de vragenlijst met plezier zult invullen. Dank je wel!
 </p>
-<a asp-area="" asp-controller="Home" asp-action="Form">
+@*<a asp-area="" asp-controller="Home" asp-action="Form" asp-route-id="@Model.Guid">
     <button>Ga naar Formulier</button>
-</a>
+</a>*@
+
+    <form asp-action="Index">
+        <input type="hidden" asp-for="@Model.Guid" />
+        <input type="submit" class="button" value="Ga naar Formulier"/>
+    </form>
 </body>
 </html>
 
