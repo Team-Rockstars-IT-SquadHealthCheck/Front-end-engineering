@@ -20,12 +20,24 @@ public class HomeController : Controller
 
     public IActionResult Index(string id, FormSubmissionModel model)
     {
+        /*   HelloWorld helloWorld = _homeService.HelloWorld();
+           string httpResponseMessage = helloWorld.httpResponseMessage;
+           Console.WriteLine(httpResponseMessage);
+           ViewData["httpResponseMessage"] = httpResponseMessage; */
+        return View();
+    }
+
+    public IActionResult Form()
+    {
+        return View();
+        /*
         HelloWorld helloWorld = _homeService.HelloWorld();
         string httpResponseMessage = helloWorld.httpResponseMessage;
         Console.WriteLine(httpResponseMessage);
         ViewData["httpResponseMessage"] = httpResponseMessage;
         model.Guid = id;
         return View(model);
+        */
     }
 
     [HttpPost]
