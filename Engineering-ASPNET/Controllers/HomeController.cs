@@ -20,6 +20,11 @@ public class HomeController : Controller
 
     public IActionResult Index(string id, FormSubmissionModel model)
     {
+        string user_ID = _homeService.ValidateID(id);
+        if (string.IsNullOrEmpty(user_ID))
+        {
+            //return RedirectToAction("Error");
+        }
         HelloWorld helloWorld = _homeService.HelloWorld();
         string httpResponseMessage = helloWorld.httpResponseMessage;
         Console.WriteLine(httpResponseMessage);

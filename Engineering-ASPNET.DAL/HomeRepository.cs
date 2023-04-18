@@ -34,9 +34,6 @@ namespace Engineering_ASPNET.DAL
         public async Task<string> ValidateID(string id)
         {
             HttpClient httpClient = new();
-            string json = JsonConvert.SerializeObject(id);
-            var stringContent = new StringContent(json);
-
             string user_ID = await httpClient.GetStringAsync("http://138.201.52.251:8081/Validate/{id}");
             return user_ID;
         }

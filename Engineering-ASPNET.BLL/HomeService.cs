@@ -59,8 +59,8 @@ namespace Engineering_ASPNET.BLL
                 Survey surveyDto = new Survey
                 {
                     Survey_ID = (int)survey["id"],
-                    Description = (string)survey["name"],
-                    Name = (string)survey["description"],
+                    Name = (string)survey["name"],
+                    Description = (string)survey["description"],
                     Questions = QuestionsArray.ToObject<List<Question>>()
                 };
                 surveyDtos.Add(surveyDto);
@@ -71,9 +71,14 @@ namespace Engineering_ASPNET.BLL
         public string ValidateID(string id)
         {
             Task<string> user_ID = _repository.ValidateID(id);
-            user_ID.Wait();
-            string User_ID = user_ID.Result;
-            return User_ID;
+
+            if (user_ID != null)
+            {
+                //user_ID.Wait();
+                //string User_ID = user_ID.Result;
+                //return User_ID;
+            }
+            return "";
         }
     }
 }
