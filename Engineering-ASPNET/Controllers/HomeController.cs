@@ -20,25 +20,11 @@ public class HomeController : Controller
 
     public IActionResult Index(string id, FormSubmissionModel model)
     {
-<<<<<<< HEAD
-     /*   HelloWorld helloWorld = _homeService.HelloWorld();
-        string httpResponseMessage = helloWorld.httpResponseMessage;
-        Console.WriteLine(httpResponseMessage);
-        ViewData["httpResponseMessage"] = httpResponseMessage; */
-        return View();
-    }
-
-    public IActionResult Form()
-    {
-        return View();
-=======
         HelloWorld helloWorld = _homeService.HelloWorld();
         string httpResponseMessage = helloWorld.httpResponseMessage;
         Console.WriteLine(httpResponseMessage);
         ViewData["httpResponseMessage"] = httpResponseMessage;
-        model.Guid = id;
-        return View(model);
->>>>>>> 90436f1c8841f54625b7444215c0b6635cf3bbf9
+        return View();
     }
 
     [HttpPost]
@@ -47,7 +33,6 @@ public class HomeController : Controller
     {
         if (id != null)
         {
-            //_homeService.ValidateID(id);
             return RedirectToAction("Form", "Home", new { id } );
         }
         return View(id);
