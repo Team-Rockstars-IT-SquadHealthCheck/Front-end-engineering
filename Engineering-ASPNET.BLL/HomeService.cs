@@ -1,4 +1,5 @@
 ﻿using Engineering_ASPNET.DAL;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -47,38 +48,19 @@ namespace Engineering_ASPNET.BLL
         public IEnumerable<Survey> GetSurveys()
         {
             Task<string> surveysString = _repository.GetSurveys();
-            List<Survey> surveyDtos = new List<Survey>();
             surveysString.Wait();
             string surveysJson = surveysString.Result;
-            JObject obj = JObject.Parse(surveysJson);
-            var surveys = obj["surveys"];
-            foreach (var survey in surveys)
-            {
-                var QuestionsArray = survey["questions"].Value<JArray>();
-
-                Survey surveyDto = new Survey
-                {
-                    Survey_ID = (int)survey["id"],
-                    Name = (string)survey["name"],
-                    Description = (string)survey["description"],
-                    Questions = QuestionsArray.ToObject<List<Question>>()
-                };
-                surveyDtos.Add(surveyDto);
-            };
-            return surveyDtos;
+            List<Survey> surveys = JsonConvert.DeserializeObject<List<Survey>>(surveysJson);
+            return surveys;
         }
 
-        public string ValidateID(string id)
+        public int ValidateID(string id)
         {
             Task<string> user_ID = _repository.ValidateID(id);
 
-            if (user_ID != null)
-            {
-                //user_ID.Wait();
-                //string User_ID = user_ID.Result;
-                //return User_ID;
-            }
-            return "";
+            user_ID.Wait();
+            string User_ID = user_ID.Result;
+            return Convert.ToInt32(User_ID);
         }
     }
 }
