@@ -68,31 +68,12 @@ namespace Engineering_ASPNET.BLL
             return surveyDtos;
         }
 
-        public Link ValidateID(string id)
+        public string ValidateID(string id)
         {
-
-            if (id.Count(s => s == ',') == 2)
-            {
-                return ConvertLinkBy(id);
-            }
-            else
-            {
-                Link link = new Link();
-                return link;
-            }
-        }
-
-        public Link ConvertLinkBy(string id)
-        {
-            Link link = new Link();
-            string[] ids = id.Split('&');
-
-            link.UUID = ids[0];
-            link.Squad_ID = ids[1];
-            link.Company_ID = ids[2];
-
-            _repository.ValidateID(link);
-            return link;
+            Task<string> user_ID = _repository.ValidateID(id);
+            user_ID.Wait();
+            string User_ID = user_ID.Result;
+            return User_ID;
         }
     }
 }
