@@ -1,8 +1,11 @@
-
+@{
+    var validatie = ViewData["validationMessage"];
+}
 @model FormSubmissionModel
 @using (Html.BeginForm("Form", "Home", FormMethod.Post))
 {
     <h1>Squad Health Check</h1>
+    <h2>@validatie</h2>
     <br>
     <section>
         <div>
@@ -29,7 +32,6 @@
                 <h2>Ruimte voor verbetering</h2>
             </label>
         </div>
-        @Html.ValidationMessageFor(model => model.Question1)
     </section>
     <hr>
     <section>
