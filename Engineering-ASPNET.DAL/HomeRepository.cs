@@ -19,9 +19,18 @@ namespace Engineering_ASPNET.DAL
         {
             HttpClient httpClient = new();
             string json = JsonConvert.SerializeObject(answers);
-            var stringContent = new StringContent(json);
+            var stringContent = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
 
-            await httpClient.PostAsync("http://138.201.52.251:8081/Answer", stringContent);
+            var response = await httpClient.PostAsync("http://138.201.52.251:8081/Answer", stringContent);
+
+            if (response.IsSuccessStatusCode)
+            {
+                Console.WriteLine("Data sent successfully.");
+            }
+            else
+            {
+                Console.WriteLine($"Failed to send data. Status code: {response.StatusCode}");
+            }
         }
 
         public async Task<string> GetSurveys()
