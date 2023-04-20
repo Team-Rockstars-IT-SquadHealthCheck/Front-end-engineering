@@ -87,13 +87,12 @@ public class HomeController : Controller
             {
                 AnswerModel answer = new AnswerModel
                 {
-                    QuestionId = questionid,
+                    QuestionId = 2,
                     UserId = user_ID, // temprary for test
                     Answer = question.Value,
                     Comment = "" // for now empty
                 };
                 answers.Add(answer);
-				questionid++;
 			}
 
             _homeService.SubmitAnswers(answers);
