@@ -4,6 +4,7 @@ using Engineering_ASPNET.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using System.Reflection;
+using System.Security.Principal;
 
 namespace Engineering_ASPNET.Controllers;
 
@@ -20,10 +21,22 @@ public class HomeController : Controller
 
     public IActionResult Index(string id, FormSubmissionModel model)
     {
-        /*   HelloWorld helloWorld = _homeService.HelloWorld();
-           string httpResponseMessage = helloWorld.httpResponseMessage;
-           Console.WriteLine(httpResponseMessage);
-           ViewData["httpResponseMessage"] = httpResponseMessage; */
+        int user_ID = 0;
+        _homeService.GetSurveys();
+        if (id != null)
+        {
+			user_ID = _homeService.ValidateID(id);
+		}
+        if (user_ID == 0)
+        {
+            return RedirectToAction("UserError");
+        }
+        HttpContext.Session.SetInt32("user_id", user_ID);
+
+        HelloWorld helloWorld = _homeService.HelloWorld();
+        string httpResponseMessage = helloWorld.httpResponseMessage;
+        Console.WriteLine(httpResponseMessage);
+        ViewData["httpResponseMessage"] = httpResponseMessage;
         return View();
     }
 
@@ -39,43 +52,55 @@ public class HomeController : Controller
     }
     public IActionResult Form(string id)
     {
-        FormSubmissionModel model = new FormSubmissionModel();
-        model.Guid = id;
-        
-        return View(model);
+        if (id != null && _homeService.ValidateID(id) != 0)
+        {
+            FormSubmissionModel model = new FormSubmissionModel();
+            model.Guid = id;
+
+            return View(model);
+        }
+        else
+        {
+            return RedirectToAction(nameof(UserError));
+        }
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult Form(FormSubmissionModel model, string id)
     {
-        
-        if (!ModelState.IsValid)
+        if (_homeService.ValidateID(id) != 0) 
         {
-            string validation = "Je moet alles invullen!";
-            ViewData["validationMessage"] = validation;
-            return View(model);
-        }
-        PropertyInfo[] modelProperties = model.GetType().GetProperties();
-        List<int?> questionValues = GetAnswers(model);
-        List<AnswerModel> answers = new List<AnswerModel>();
-
-        int questionid = 0;
-        foreach (int? question in questionValues)
-        {
-            questionid++;
-            AnswerModel answer = new AnswerModel
+            int user_ID = (int)HttpContext.Session.GetInt32("user_id");
+            if (!ModelState.IsValid)
             {
-                QuestionId = questionid,
-                UserId = 1, // temprary for test
-                Answer = question.Value,
-                Comment = "" // for now empty
-            };
-            answers.Add(answer);
-        }
+                string validation = "Je moet alles invullen!";
+                ViewData["validationMessage"] = validation;
+                return View(model);
+            }
+            PropertyInfo[] modelProperties = model.GetType().GetProperties();
+            List<int?> questionValues = GetAnswers(model);
+            List<AnswerModel> answers = new List<AnswerModel>();
 
-        _homeService.SubmitAnswers(answers);
-        return RedirectToAction(nameof(BedanktScherm));
+            int questionid = 0;
+            foreach (int? question in questionValues)
+            {
+                AnswerModel answer = new AnswerModel
+                {
+                    QuestionId = questionid,
+                    UserId = user_ID, // temprary for test
+                    Answer = question.Value,
+                    Comment = "" // for now empty
+                };
+                answers.Add(answer);
+				questionid++;
+			}
+
+            _homeService.SubmitAnswers(answers);
+            return RedirectToAction(nameof(BedanktScherm));
+        }
+        return RedirectToAction(nameof(UserError));
+
     }
     public IActionResult BedanktScherm()
     {
@@ -96,6 +121,11 @@ public class HomeController : Controller
             }
         }
         return questionValues;
+    }
+
+    public IActionResult UserError()
+    {
+        return View();
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
