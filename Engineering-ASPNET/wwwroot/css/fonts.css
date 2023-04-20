@@ -10,8 +10,14 @@
     font-weight: normal;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h5, h6 {
     color: #232323;
+    font-family: "DIN 2014", sans-serif;
+    font-weight: bold !important;
+}
+
+h4 {
+    color: #00d46b;
     font-family: "DIN 2014", sans-serif;
     font-weight: bold !important;
 }
