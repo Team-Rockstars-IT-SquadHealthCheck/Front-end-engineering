@@ -1,234 +1,225 @@
-@{
-    var validatie = ViewData["validationMessage"];
-}
 @model FormSubmissionModel
 @using (Html.BeginForm("Form", "Home", FormMethod.Post))
 {
     <h1>Squad Health Check</h1>
-    <h2>@validatie</h2>
     <br>
+    <h2 class="text-danger">@ViewData["validationMessage"]</h2>
     <section>
         <div>
-            <h2>Vraag 1: Doel en visie</h2>
-            <div>
-                Heeft het team duidelijk gedefinieerde doelen en een visie die alle teamleden begrijpen en ondersteunen?
+            <h2>Vraag 1: Toegevoegde waarde</h2>
+            <div class="paragraph">
+                Heeft het team waardevolle resultaten opgeleverd?
             </div>
         </div>
         <div>
             <input type="radio" id="good" name="question1" value="0">
             <label class="groen-fade" for="good">
-                <h2>Ga zo door!</h2>
+                <h2>Het team heeft aanzienlijke waarde opgeleverd</h2>
             </label>
         </div>
         <div>
             <input type="radio" id="average" name="question1" value="1">
             <label class="oranje-fade" for="average">
-                <h2>Oké bezig</h2>
+                <h2>Het team heeft enige waarde opgeleverd, maar er is nog ruimte voor verbetering</h2>
             </label>
         </div>
         <div>
             <input type="radio" id="bad" name="question1" value="2">
             <label class="rode-fade" for="bad">
-                <h2>Ruimte voor verbetering</h2>
+                <h2>Het team heeft weinig tot geen waarde opgeleverd</h2>
             </label>
         </div>
     </section>
     <hr>
     <section>
         <div>
-            <h2>Vraag 2: Doel en visie</h2>
-            <div>
-                Heeft het team duidelijk gedefinieerde doelen en een visie die alle teamleden begrijpen en ondersteunen?
+            <h2>Vraag 2: Release gemak</h2>
+            <div class="paragraph">
+                Kan het team de applicatie gemakkelijk vrijgeven voor gebruik?
             </div>
         </div>
         <div>
             <input type="radio" id="good2" name="question2" value="0">
             <label class="groen-fade" for="good2">
-                <h2>Ga zo door!</h2>
+                <h2>Het team kan de applicatie gemakkelijk vrijgeven zonder enige problemen</h2>
             </label>
         </div>
         <div>
             <input type="radio" id="average2" name="question2" value="1">
             <label class="oranje-fade" for="average2">
-                <h2>Oké bezig</h2>
+                <h2>Het team kan de applicatie vrijgeven, maar er zijn nog enkele zaken die verbeterd moeten worden</h2>
             </label>
         </div>
         <div>
             <input type="radio" id="bad2" name="question2" value="2">
             <label class="rode-fade" for="bad2">
-                <h2>Ruimte voor verbetering</h2>
+                <h2>Het team kan de applicatie niet gemakkelijk vrijgeven vanwege grote technische problemen</h2>
             </label>
         </div>
-        @Html.ValidationMessageFor(model => model.Question1)
     </section>
     <hr>
     <section>
         <div>
-            <h2>Vraag 1: Doel en visie</h2>
-            <div>
-                Heeft het team duidelijk gedefinieerde doelen en een visie die alle teamleden begrijpen en ondersteunen?
+            <h2>Vraag 3: Werkplezier</h2>
+            <div class="paragraph">
+                Vindt het team het leuk om aan dit project te werken?
             </div>
         </div>
         <div>
             <input type="radio" id="good3" name="question3" value="0">
             <label class="groen-fade" for="good3">
-                <h2>Ga zo door!</h2>
+                <h2>Het team vindt het project erg leuk en is gemotiveerd om eraan te werken</h2>
             </label>
         </div>
         <div>
             <input type="radio" id="average3" name="question3" value="1">
             <label class="oranje-fade" for="average3">
-                <h2>Oké bezig</h2>
+                <h2>Het team vindt het project enigszins leuk, maar kan wel wat extra motivatie gebruiken</h2>
             </label>
         </div>
         <div>
             <input type="radio" id="bad3" name="question3" value="2">
             <label class="rode-fade" for="bad3">
-                <h2>Ruimte voor verbetering</h2>
+                <h2>Het team vindt het project niet leuk en heeft weinig motivatie om eraan te werken</h2>
             </label>
         </div>
-        @Html.ValidationMessageFor(model => model.Question1)
     </section>
     <hr>
     <section>
         <div>
-            <h2>Vraag 4: Doel en visie</h2>
-            <div>
-                Heeft het team duidelijk gedefinieerde doelen en een visie die alle teamleden begrijpen en ondersteunen?
+            <h2>Vraag 4: Codekwaliteit</h2>
+            <div class="paragraph">
+                Is de code van goede kwaliteit en overzichtelijk geschreven?
             </div>
         </div>
         <div>
             <input type="radio" id="good4" name="question4" value="0">
             <label class="groen-fade" for="good4">
-                <h2>Ga zo door!</h2>
+                <h2>Ja, de code is van goede kwaliteit en overzichtelijk geschreven</h2>
             </label>
         </div>
         <div>
             <input type="radio" id="average4" name="question4" value="1">
             <label class="oranje-fade" for="average4">
-                <h2>Oké bezig</h2>
+                <h2>De code kan beter, er zijn enkele punten voor verbetering</h2>
             </label>
         </div>
         <div>
             <input type="radio" id="bad4" name="question4" value="2">
             <label class="rode-fade" for="bad4">
-                <h2>Ruimte voor verbetering</h2>
+                <h2>Nee, de code is van slechte kwaliteit en chaotisch geschreven</h2>
             </label>
         </div>
-        @Html.ValidationMessageFor(model => model.Question1)
     </section>
     <hr>
     <section>
         <div>
-            <h2>Vraag 1: Doel en visie</h2>
-            <div>
-                Heeft het team duidelijk gedefinieerde doelen en een visie die alle teamleden begrijpen en ondersteunen?
+            <h2>Vraag 5: Leeropbrengst</h2>
+            <div class="paragraph">
+                Doet het team nieuwe kennis op door aan dit project te werken?
             </div>
         </div>
         <div>
             <input type="radio" id="good5" name="question5" value="0">
             <label class="groen-fade" for="good5">
-                <h2>Ga zo door!</h2>
+                <h2>Ja, het team verwerft nieuwe kennis door aan dit project te werken</h2>
             </label>
         </div>
         <div>
             <input type="radio" id="average5" name="question5" value="1">
             <label class="oranje-fade" for="average5">
-                <h2>Oké bezig</h2>
+                <h2>Het team doet enige nieuwe kennis op, maar het is beperkt</h2>
             </label>
         </div>
         <div>
             <input type="radio" id="bad5" name="question5" value="2">
             <label class="rode-fade" for="bad5">
-                <h2>Ruimte voor verbetering</h2>
+                <h2>Nee, het team leert geen nieuwe kennis door aan dit project te werken</h2>
             </label>
         </div>
-        @Html.ValidationMessageFor(model => model.Question1)
     </section>
     <hr>
     <section>
         <div>
-            <h2>Vraag 1: Doel en visie</h2>
-            <div>
-                Heeft het team duidelijk gedefinieerde doelen en een visie die alle teamleden begrijpen en ondersteunen?
+            <h2>Vraag 6: Missie en doelen</h2>
+            <div class="paragraph">
+                Heeft het team duidelijke doelen en een visie die alle teamleden begrijpen en ondersteunen?
             </div>
         </div>
         <div>
             <input type="radio" id="good6" name="question6" value="0">
             <label class="groen-fade" for="good6">
-                <h2>Ga zo door!</h2>
+                <h2>Ja, het team heeft duidelijke doelen en een visie die alle teamleden begrijpen en ondersteunen</h2>
             </label>
         </div>
         <div>
             <input type="radio" id="average6" name="question6" value="1">
             <label class="oranje-fade" for="average6">
-                <h2>Oké bezig</h2>
+                <h2>De doelen en visie van het team zijn enigszins onduidelijk en sommige teamleden begrijpen ze niet volledig</h2>
             </label>
         </div>
         <div>
             <input type="radio" id="bad6" name="question6" value="2">
             <label class="rode-fade" for="bad6">
-                <h2>Ruimte voor verbetering</h2>
+                <h2>Nee, het team heeft geen duidelijke doelen en visie en sommige teamleden begrijpen ze niet of ondersteunen ze niet</h2>
             </label>
         </div>
-        @Html.ValidationMessageFor(model => model.Question1)
     </section>
     <hr>
     <section>
         <div>
-            <h2>Vraag 1: Doel en visie</h2>
-            <div>
-                Heeft het team duidelijk gedefinieerde doelen en een visie die alle teamleden begrijpen en ondersteunen?
+            <h2>Vraag 7: Eigen inbreng</h2>
+            <div class="paragraph">
+                Krijgt het team voldoende ruimte om eigen inbreng te hebben in het project?
             </div>
         </div>
         <div>
             <input type="radio" id="good7" name="question7" value="0">
             <label class="groen-fade" for="good7">
-                <h2>Ga zo door!</h2>
+                <h2>Ja, het team krijgt voldoende ruimte om eigen inbreng te hebben in het project</h2>
             </label>
         </div>
         <div>
             <input type="radio" id="average7" name="question7" value="1">
             <label class="oranje-fade" for="average7">
-                <h2>Oké bezig</h2>
+                <h2>Het team heeft enige ruimte voor eigen inbreng, maar dit kan beter</h2>
             </label>
         </div>
         <div>
             <input type="radio" id="bad7" name="question7" value="2">
             <label class="rode-fade" for="bad7">
-                <h2>Ruimte voor verbetering</h2>
+                <h2>Nee, het team heeft geen duidelijke doelen en visie en sommige teamleden begrijpen ze niet of ondersteunen ze niet</h2>
             </label>
         </div>
-        @Html.ValidationMessageFor(model => model.Question1)
     </section>
     <hr>
     <section>
         <div>
-            <h2>Vraag 1: Doel en visie</h2>
-            <div>
-                Heeft het team duidelijk gedefinieerde doelen en een visie die alle teamleden begrijpen en ondersteunen?
+            <h2>Vraag 8: Snelheid van werken</h2>
+            <div class="paragraph">
+                Werkt het team efficiënt en snel aan het project?
             </div>
         </div>
         <div>
             <input type="radio" id="good8" name="question8" value="0">
             <label class="groen-fade" for="good8">
-                <h2>Ga zo door!</h2>
+                <h2>Ja, het team werkt efficiënt en snel aan het project</h2>
             </label>
         </div>
         <div>
             <input type="radio" id="average8" name="question8" value="1">
             <label class="oranje-fade" for="average8">
-                <h2>Oké bezig</h2>
+                <h2>Het team werkt redelijk efficiënt en snel aan het project, maar er zijn enkele verbeterpunten</h2>
             </label>
         </div>
         <div>
             <input type="radio" id="bad8" name="question8" value="2">
             <label class="rode-fade" for="bad8">
-                <h2>Ruimte voor verbetering</h2>
+                <h2>Nee, het team werkt niet efficiënt en/of snel aan het project</h2>
             </label>
         </div>
-        @Html.ValidationMessageFor(model => model.Question1)
     </section>
     <hr>
-    <button type="submit" onclick="location.href='@Url.Action("BedanktScherm","Home")'">Verstuur</button>
+
+    <button id="Submit" type="submit" value="submit">Submit</button>
 }

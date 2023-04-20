@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model FormSubmissionModel
+<!DOCTYPE html>
 <html lang="en">
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 <head>
@@ -12,9 +13,9 @@
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-expand-md navbar-light bg-white">
+    <nav class="navbar navbar-expand-md navbar-light bg-white d-flex justify-content-center">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/">
                 <img src="@Url.Content("~/images/logo.png")" height="60">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -23,15 +24,27 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <form asp-controller="Home" asp-action="Form" method="get">
-                            <button type="submit">Ga naar formulier</button>
-                        </form>
+                            @if (Model != null)
+                            {
+                                <a asp-controller="Home" asp-action="Form" asp-route-id="@Model.Guid">
+                                    <button>Ga naar Formulier</button>
+                                </a>
+                            }
+                            @if (Model == null)
+                            {
+                                <a asp-controller="Home" asp-action="Form" asp-route-id="">
+                                    <button>Ga naar Formulier</button>
+                                </a>
+                            }
+
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 </header>
+<div class="header-image">
+</div>
 <div class="container">
     <main role="main" class="pb-3">
         @RenderBody()
