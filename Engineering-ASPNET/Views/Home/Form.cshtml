@@ -230,6 +230,5 @@
         @Html.ValidationMessageFor(model => model.Question1)
     </section>
     <hr>
-    
-    <input id = "Submit" type = "submit" value = "submit" />
+    <button type="submit" onclick="location.href='@Url.Action("BedanktScherm","Home")'">Verstuur</button>
 }
