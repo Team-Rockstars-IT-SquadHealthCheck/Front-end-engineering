@@ -52,7 +52,7 @@ public class HomeController : Controller
     }
     public IActionResult Form(string id)
     {
-        if (_homeService.ValidateID(id) != 0)
+        if (id != null && _homeService.ValidateID(id) != 0)
         {
             FormSubmissionModel model = new FormSubmissionModel();
             model.Guid = id;
@@ -85,7 +85,6 @@ public class HomeController : Controller
             int questionid = 0;
             foreach (int? question in questionValues)
             {
-                questionid++;
                 AnswerModel answer = new AnswerModel
                 {
                     QuestionId = questionid,
@@ -94,7 +93,8 @@ public class HomeController : Controller
                     Comment = "" // for now empty
                 };
                 answers.Add(answer);
-            }
+				questionid++;
+			}
 
             _homeService.SubmitAnswers(answers);
             return RedirectToAction(nameof(BedanktScherm));
