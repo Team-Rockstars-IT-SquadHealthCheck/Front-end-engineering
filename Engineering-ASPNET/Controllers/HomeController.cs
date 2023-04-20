@@ -21,8 +21,12 @@ public class HomeController : Controller
 
     public IActionResult Index(string id, FormSubmissionModel model)
     {
+        int user_ID = 0;
         _homeService.GetSurveys();
-        int user_ID = _homeService.ValidateID(id);
+        if (id != null)
+        {
+			user_ID = _homeService.ValidateID(id);
+		}
         if (user_ID == 0)
         {
             return RedirectToAction("UserError");
