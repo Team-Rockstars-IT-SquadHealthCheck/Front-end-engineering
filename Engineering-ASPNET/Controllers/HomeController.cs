@@ -27,26 +27,12 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Form()
-    {
-        return View();
-        /*
-        HelloWorld helloWorld = _homeService.HelloWorld();
-        string httpResponseMessage = helloWorld.httpResponseMessage;
-        Console.WriteLine(httpResponseMessage);
-        ViewData["httpResponseMessage"] = httpResponseMessage;
-        model.Guid = id;
-        return View(model);
-        */
-    }
-
     [HttpPost]
     [ValidateAntiForgeryToken]
     public IActionResult Index(string id)
     {
         if (id != null)
         {
-            //_homeService.ValidateID(id);
             return RedirectToAction("Form", "Home", new { id } );
         }
         return View(id);
