@@ -26,17 +26,17 @@ public class HomeController : Controller
         if (id != null)
         {
 			user_ID = _homeService.ValidateID(id);
-		}
-        if (user_ID == 0)
+            HttpContext.Session.SetInt32("user_id", user_ID);
+        }
+        if (user_ID == 0 && HttpContext.Session.GetInt32("user_id") == null)
         {
             return RedirectToAction("UserError");
         }
-        HttpContext.Session.SetInt32("user_id", user_ID);
 
-        HelloWorld helloWorld = _homeService.HelloWorld();
-        string httpResponseMessage = helloWorld.httpResponseMessage;
-        Console.WriteLine(httpResponseMessage);
-        ViewData["httpResponseMessage"] = httpResponseMessage;
+        // HelloWorld helloWorld = _homeService.HelloWorld();
+        // string httpResponseMessage = helloWorld.httpResponseMessage;
+        // Console.WriteLine(httpResponseMessage);
+        // ViewData["httpResponseMessage"] = httpResponseMessage;
         return View();
     }
 
