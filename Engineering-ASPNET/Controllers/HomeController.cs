@@ -22,7 +22,7 @@ public class HomeController : Controller
     public IActionResult Index(string id, FormSubmissionModel model)
     {
         int user_ID = 0;
-        _homeService.GetSurveys();
+
         if (id != null)
         {
 			user_ID = _homeService.ValidateID(id);
@@ -44,7 +44,7 @@ public class HomeController : Controller
     [ValidateAntiForgeryToken]
     public IActionResult Index(string id)
     {
-        if (id != null)
+        if (id != null && GetQuestionsBy(9) != null)
         {
             return RedirectToAction("Form", "Home", new { id } );
         }
@@ -52,10 +52,13 @@ public class HomeController : Controller
     }
     public IActionResult Form(string id)
     {
+        var questions = GetQuestionsBy(9);
+
         if (id != null && _homeService.ValidateID(id) != 0)
         {
             FormSubmissionModel model = new FormSubmissionModel();
             model.Guid = id;
+            model.questions = questions;
 
             return View(model);
         }
@@ -78,6 +81,10 @@ public class HomeController : Controller
                 ViewData["validationMessage"] = validation;
                 return View(model);
             }
+            //if (model.Answers.Count != model.questions.Count)
+            //{
+
+            //}
             PropertyInfo[] modelProperties = model.GetType().GetProperties();
             List<int?> questionValues = GetAnswers(model);
             List<AnswerModel> answers = new List<AnswerModel>();
@@ -123,6 +130,16 @@ public class HomeController : Controller
         return questionValues;
     }
 
+    [NonAction]
+    public List<Question> GetQuestionsBy(int id)
+    {
+        List<Question> questions = new List<Question>();
+
+        var survey = _homeService.GetSurveyBy(id);
+
+        questions.AddRange(survey.Questions);
+        return questions;
+    }
     public IActionResult UserError()
     {
         return View();

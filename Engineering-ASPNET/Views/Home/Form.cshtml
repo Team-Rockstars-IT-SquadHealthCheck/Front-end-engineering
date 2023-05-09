@@ -221,39 +221,45 @@
     </section>
     <hr>
 
-    /*
-    <hr>
-    <section>
-        <div>
-            <h2></h2>
-            <div class="paragraph">
-                
+    
+@foreach (var item in Model.questions)
+    {
+        <hr>
+        <section>
+            <div>
+                <h2>@item.Title</h2>
+                <div class="paragraph">
+                    @item.Description
+                </div>
             </div>
-        </div>
-        <div>
-            <input type="radio" id="good8" name="question8" value="0">
-            <label class="groen-fade" for="good8">
-                <h2>
-                </h2>
-            </label>
-        </div>
-        <div>
-            <input type="radio" id="average8" name="question8" value="1">
-            <label class="oranje-fade" for="average8">
-                <h2>
-                </h2>
-            </label>
-        </div>
-        <div>
-            <input type="radio" id="bad8" name="question8" value="2">
-            <label class="rode-fade" for="bad8">
-                <h2>
-                </h2>
-            </label>
-        </div>
-    </section>
-    <hr>
-    */
+            <div>
+                <input type="radio" id="good8" name="question8" value="0">
+                <label class="groen-fade" for="good8">
+                    <h2>
+                        ;alsjdf
+                    </h2>
+                </label>
+            </div>
+            <div>
+                <input type="radio" id="average8" name="question8" value="1">
+                <label class="oranje-fade" for="average8">
+                    <h2>
+                        ';adskf'
+                    </h2>
+                </label>
+            </div>
+            <div>
+                <input type="radio" id="bad8" name="question8" value="2">
+                <label class="rode-fade" for="bad8">
+                    <h2>
+                        ;akldsf
+                    </h2>
+                </label>
+            </div>
+        </section>
+        <hr>
+    }
+    
 
     <button id="Submit" type="submit" value="submit">Submit</button>
 }
