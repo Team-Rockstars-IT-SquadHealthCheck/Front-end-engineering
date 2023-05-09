@@ -96,14 +96,15 @@ public class HomeController : Controller
 			}
 
             _homeService.SubmitAnswers(answers);
-            return RedirectToAction(nameof(BedanktScherm));
+            return RedirectToAction("BedanktScherm", "Home", model);
+
         }
         return RedirectToAction(nameof(UserError));
 
     }
-    public IActionResult BedanktScherm()
+    public IActionResult BedanktScherm(FormSubmissionModel model)
     {
-        return View();
+        return View(model);
     }
 
     [NonAction]

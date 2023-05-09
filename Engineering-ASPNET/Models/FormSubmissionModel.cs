@@ -1,3 +1,4 @@
+using Engineering_ASPNET.DAL;
 using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 
@@ -11,6 +12,11 @@ public enum Grading
 }
 public class FormSubmissionModel
 {
+
+    public List<int> Answers { get; set; }
+    public List<Question> questions { get; set; }
+
+
     [Required]
     public int? Question1 { get; set; }
     [Required]
