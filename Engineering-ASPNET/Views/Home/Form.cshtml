@@ -4,7 +4,7 @@
     <h1>Squad Health Check</h1>
     <br>
     <h2 class="text-danger">@ViewData["validationMessage"]</h2>
-    <section>
+@*    <section>
         <div>
             <h2>Vraag 1: Toegevoegde waarde</h2>
             <div class="paragraph">
@@ -219,21 +219,21 @@
             </label>
         </div>
     </section>
-    <hr>
+    <hr>*@
 
-    
-@foreach (var item in Model.questions)
+@*
+    @for (int y = 0; y < Model.questions.Count; y++)
     {
         <hr>
         <section>
             <div>
-                <h2>@item.Title</h2>
+                <h2>@Model.questions[y].Title</h2>
                 <div class="paragraph">
-                    @item.Description
+                    @Model.questions[y].Description
                 </div>
             </div>
             <div>
-                <input type="radio" id="good8" name="question8" value="0">
+                <input type="radio" id="good8" name="questions" value="0">
                 <label class="groen-fade" for="good8">
                     <h2>
                         ;alsjdf
@@ -241,7 +241,7 @@
                 </label>
             </div>
             <div>
-                <input type="radio" id="average8" name="question8" value="1">
+                <input type="radio" id="average8" name="qu" value="1">
                 <label class="oranje-fade" for="average8">
                     <h2>
                         ';adskf'
@@ -259,7 +259,44 @@
         </section>
         <hr>
     }
-    
+    *@
 
+    @for (int y = 0; y < Model.questions.Count; y++)
+    {
+        <hr>
+        <section>
+            <div>
+                <h2>@Model.questions[y].Title</h2>
+                <div class="paragraph">
+                    @Model.questions[y].Description
+                </div>
+            </div>
+            <div>
+                <input type="radio" id="good@(y+1)" name="question@(y+1)" value="0">
+                <label class="groen-fade" for="good@(y+1)">
+                    <h2>
+                        ;alsjdf
+                    </h2>
+                </label>
+            </div>
+            <div>
+                <input type="radio" id="average@(y+1)" name="question@(y+1)" value="1">
+                <label class="oranje-fade" for="average@(y+1)">
+                    <h2>
+                        ';adskf'
+                    </h2>
+                </label>
+            </div>
+            <div>
+                <input type="radio" id="bad@(y+1)" name="question@(y+1)" value="2">
+                <label class="rode-fade" for="bad@(y+1)">
+                    <h2>
+                        ;akldsf
+                    </h2>
+                </label>
+            </div>
+        </section>
+        <hr>
+    }
     <button id="Submit" type="submit" value="submit">Submit</button>
 }

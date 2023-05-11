@@ -72,6 +72,11 @@ public class HomeController : Controller
     [ValidateAntiForgeryToken]
     public IActionResult Form(FormSubmissionModel model, string id)
     {
+        var questions = GetQuestionsBy(9);
+
+        model.Guid = id;
+        model.questions = questions;
+
         if (_homeService.ValidateID(id) != 0) 
         {
             int user_ID = (int)HttpContext.Session.GetInt32("user_id");
@@ -81,9 +86,11 @@ public class HomeController : Controller
                 ViewData["validationMessage"] = validation;
                 return View(model);
             }
-            //if (model.Answers.Count != model.questions.Count)
+            //if (model.Answers == null || model.Answers.Count != model.questions.Count)
             //{
-
+            //    string validation = "Je moet alles invullen!";
+            //    ViewData["validationMessage"] = validation;
+            //    return View(model);
             //}
             PropertyInfo[] modelProperties = model.GetType().GetProperties();
             List<int?> questionValues = GetAnswers(model);
