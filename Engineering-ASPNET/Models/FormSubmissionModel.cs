@@ -13,8 +13,8 @@ public enum Grading
 public class FormSubmissionModel
 {
 
-    public List<int> Answers { get; set; }
-    public List<Question> questions { get; set; }
+    public List<int> Answers { get; set; } = new List<int>();
+    public List<Question> questions { get; set; } = new List<Question>();
 
 
     [Required]
