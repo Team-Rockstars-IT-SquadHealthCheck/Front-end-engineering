@@ -33,10 +33,10 @@ public class HomeController : Controller
             return RedirectToAction("UserError");
         }
 
-        // HelloWorld helloWorld = _homeService.HelloWorld();
-        // string httpResponseMessage = helloWorld.httpResponseMessage;
-        // Console.WriteLine(httpResponseMessage);
-        // ViewData["httpResponseMessage"] = httpResponseMessage;
+        HelloWorld helloWorld = _homeService.HelloWorld();
+        string httpResponseMessage = helloWorld.httpResponseMessage;
+        Console.WriteLine(httpResponseMessage);
+        ViewData["httpResponseMessage"] = httpResponseMessage;
         return View();
     }
 
@@ -72,37 +72,32 @@ public class HomeController : Controller
     [ValidateAntiForgeryToken]
     public IActionResult Form(FormSubmissionModel model, string id)
     {
-        if (_homeService.ValidateID(id) != 0) 
+        model.questions = GetQuestionsBy(9); ;
+
+		if (_homeService.ValidateID(id) != 0) 
         {
             int user_ID = (int)HttpContext.Session.GetInt32("user_id");
-            //if (!ModelState.IsValid)
-            //{
-            //    string validation = "Je moet alles invullen!";
-            //    ViewData["validationMessage"] = validation;
-            //    return View(model);
-            //}
-            if (model.Answers == null || model.Answers.Count != model.questions.Count)
+
+			if (model.Answers == null || model.Answers.Count != model.questions.Count)
             {
                 string validation = "Je moet alles invullen!";
                 ViewData["validationMessage"] = validation;
                 return View(model);
             }
-            PropertyInfo[] modelProperties = model.GetType().GetProperties();
-            List<int?> questionValues = GetAnswers(model);
+            List<int> questionValues = model.Answers;
             List<AnswerModel> answers = new List<AnswerModel>();
 
-            int questionid = 0;
-            foreach (int? question in questionValues)
+            for (int i = 0; i < questionValues.Count; i++)
             {
                 AnswerModel answer = new AnswerModel
                 {
-                    QuestionId = 2,
+                    QuestionId = model.questions[i].Question_ID,
                     UserId = user_ID, // temprary for test
-                    Answer = question.Value,
+                    Answer = questionValues[i],
                     Comment = "" // for now empty
                 };
                 answers.Add(answer);
-			}
+            }
 
             _homeService.SubmitAnswers(answers);
             return RedirectToAction("BedanktScherm", "Home", model);
@@ -113,23 +108,8 @@ public class HomeController : Controller
     }
     public IActionResult BedanktScherm(FormSubmissionModel model)
     {
+        model.questions = GetQuestionsBy(9);
         return View(model);
-    }
-
-    [NonAction]
-    public List<int?> GetAnswers(FormSubmissionModel model)
-    {
-        List<int?> questionValues = new List<int?>();
-
-        foreach (PropertyInfo prop in model.GetType().GetProperties())
-        {
-            if (prop.Name.StartsWith("Question") && prop.PropertyType == typeof(int?))
-            {
-                int? value = (int?)prop.GetValue(model);
-                questionValues.Add(value);
-            }
-        }
-        return questionValues;
     }
 
     [NonAction]
