@@ -22,7 +22,7 @@ public class HomeController : Controller
     public IActionResult Index(string id, FormSubmissionModel model)
     {
         int user_ID = 0;
-        _homeService.GetSurveys();
+
         if (id != null)
         {
 			user_ID = _homeService.ValidateID(id);
@@ -33,10 +33,10 @@ public class HomeController : Controller
             return RedirectToAction("UserError");
         }
 
-        // HelloWorld helloWorld = _homeService.HelloWorld();
-        // string httpResponseMessage = helloWorld.httpResponseMessage;
-        // Console.WriteLine(httpResponseMessage);
-        // ViewData["httpResponseMessage"] = httpResponseMessage;
+        HelloWorld helloWorld = _homeService.HelloWorld();
+        string httpResponseMessage = helloWorld.httpResponseMessage;
+        Console.WriteLine(httpResponseMessage);
+        ViewData["httpResponseMessage"] = httpResponseMessage;
         return View();
     }
 
@@ -44,7 +44,7 @@ public class HomeController : Controller
     [ValidateAntiForgeryToken]
     public IActionResult Index(string id)
     {
-        if (id != null)
+        if (id != null && GetQuestionsBy(9) != null)
         {
             return RedirectToAction("Form", "Home", new { id } );
         }
@@ -52,10 +52,13 @@ public class HomeController : Controller
     }
     public IActionResult Form(string id)
     {
+        var questions = GetQuestionsBy(9);
+
         if (id != null && _homeService.ValidateID(id) != 0)
         {
             FormSubmissionModel model = new FormSubmissionModel();
             model.Guid = id;
+            model.questions = questions;
 
             return View(model);
         }
@@ -69,59 +72,74 @@ public class HomeController : Controller
     [ValidateAntiForgeryToken]
     public IActionResult Form(FormSubmissionModel model, string id)
     {
-        if (_homeService.ValidateID(id) != 0) 
+        model.questions = GetQuestionsBy(9); ;
+
+		if (_homeService.ValidateID(id) != 0) 
         {
             int user_ID = (int)HttpContext.Session.GetInt32("user_id");
-            if (!ModelState.IsValid)
+
+			if (model.Answers == null || model.Answers.Count != model.questions.Count)
             {
                 string validation = "Je moet alles invullen!";
                 ViewData["validationMessage"] = validation;
                 return View(model);
             }
-            PropertyInfo[] modelProperties = model.GetType().GetProperties();
-            List<int?> questionValues = GetAnswers(model);
+            List<int> questionValues = model.Answers;
             List<AnswerModel> answers = new List<AnswerModel>();
+            model.questionTextColors = new List<string>();
+            model.questionBackgroundColors = new List<string>();
 
-            int questionid = 0;
-            foreach (int? question in questionValues)
+            for (int i = 0; i < questionValues.Count; i++)
             {
                 AnswerModel answer = new AnswerModel
                 {
-                    QuestionId = 2,
+                    QuestionId = model.questions[i].Question_ID,
                     UserId = user_ID, // temprary for test
-                    Answer = question.Value,
+                    Answer = questionValues[i],
                     Comment = "" // for now empty
                 };
+                if (questionValues[i] == 0)
+                {
+                    model.questionTextColors.Add("text-green");
+                    model.questionBackgroundColors.Add("result-green");
+                }
+                else if (questionValues[i] == 1)
+                {
+                    model.questionTextColors.Add("text-orange");
+                    model.questionBackgroundColors.Add("result-orange");
+                }
+                else if (questionValues[i] == 2)
+                {
+                    model.questionTextColors.Add("text-red");
+                    model.questionBackgroundColors.Add("result-red");
+                }
                 answers.Add(answer);
-			}
+            }
 
+            
             _homeService.SubmitAnswers(answers);
-            return RedirectToAction(nameof(BedanktScherm));
+            return RedirectToAction("BedanktScherm", "Home", model);
+
         }
         return RedirectToAction(nameof(UserError));
 
     }
-    public IActionResult BedanktScherm()
+    public IActionResult BedanktScherm(FormSubmissionModel model)
     {
-        return View();
+        model.questions = GetQuestionsBy(9);
+        return View(model);
     }
 
     [NonAction]
-    public List<int?> GetAnswers(FormSubmissionModel model)
+    public List<Question> GetQuestionsBy(int id)
     {
-        List<int?> questionValues = new List<int?>();
+        List<Question> questions = new List<Question>();
 
-        foreach (PropertyInfo prop in model.GetType().GetProperties())
-        {
-            if (prop.Name.StartsWith("Question") && prop.PropertyType == typeof(int?))
-            {
-                int? value = (int?)prop.GetValue(model);
-                questionValues.Add(value);
-            }
-        }
-        return questionValues;
+        var survey = _homeService.GetSurveyBy(id);
+
+        questions.AddRange(survey.Questions);
+        return questions;
     }
-
     public IActionResult UserError()
     {
         return View();

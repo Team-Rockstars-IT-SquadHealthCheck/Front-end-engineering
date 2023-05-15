@@ -1,3 +1,4 @@
+using Engineering_ASPNET.DAL;
 using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 
@@ -11,23 +12,32 @@ public enum Grading
 }
 public class FormSubmissionModel
 {
-    [Required]
-    public int? Question1 { get; set; }
-    [Required]
-    public int? Question2 { get; set; }
-    [Required]
-    public int? Question3 { get; set; }
-    [Required]
-    public int? Question4 { get; set; }
-    [Required]
-    public int? Question5 { get; set; }
-    [Required]
-    public int? Question6 { get; set; }
-    [Required]
-    public int? Question7 { get; set; }
-    [Required]
-    public int? Question8 { get; set; }
+
+    public List<int> Answers { get; set; }
+    public List<Question> questions { get; set; }
+    
+    public List<string> questionTextColors { get; set; }
+    public List<string> questionBackgroundColors { get; set; }
+
+
     //Link? Id?
     public string Guid { get; set; } = "";
+    
+    public string QuestionOnePrimairy { get; set; }
+    public string QuestionOneSecundairy { get; set; }
+    public string QuestionTwoPrimairy { get; set; }
+    public string QuestionTwoSecundairy { get; set; }
+    public string QuestionThreePrimairy { get; set; }
+    public string QuestionThreeSecundairy { get; set; }
+    public string QuestionFourPrimairy { get; set; }
+    public string QuestionFourSecundairy { get; set; }
+    public string QuestionFivePrimairy { get; set; }
+    public string QuestionFiveSecundairy { get; set; }
+    public string QuestionSixPrimairy { get; set; }
+    public string QuestionSixSecundairy { get; set; }
+    public string QuestionSevenPrimairy { get; set; }
+    public string QuestionSevenSecundairy { get; set; }
+    public string QuestionEightPrimairy { get; set; }
+    public string QuestionEightSecundairy { get; set; }
 
 }

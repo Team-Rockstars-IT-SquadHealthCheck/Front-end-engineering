@@ -58,111 +58,19 @@ input[type="radio"]:checked + label h2 {
     color: white;
 }
 
-/*Question 1*/
-input[type="radio"]#good:not(:checked) + label h2 {
+input[type="radio"]:not(:checked) + label h2.good {
     color: #00d46b;
 }
 
-input[type="radio"]#average:not(:checked) + label h2 {
+input[type="radio"]:not(:checked) + label h2.average {
     color: #FF9803;
 }
 
-input[type="radio"]#bad:not(:checked) + label h2 {
+input[type="radio"]:not(:checked) + label h2.bad {
     color: #ff6235;
 }
 
-/*Question 2*/
-input[type="radio"]#good2:not(:checked) + label h2 {
-    color: #00d46b;
-}
-
-input[type="radio"]#average2:not(:checked) + label h2 {
-    color: #FF9803;
-}
-
-input[type="radio"]#bad2:not(:checked) + label h2 {
-    color: #ff6235;
-}
-
-/*Question 3*/
-input[type="radio"]#good3:not(:checked) + label h2 {
-    color: #00d46b;
-}
-
-input[type="radio"]#average3:not(:checked) + label h2 {
-    color: #FF9803;
-}
-
-input[type="radio"]#bad3:not(:checked) + label h2 {
-    color: #ff6235;
-}
-
-/*Question 4*/
-input[type="radio"]#good4:not(:checked) + label h2 {
-    color: #00d46b;
-}
-
-input[type="radio"]#average4:not(:checked) + label h2 {
-    color: #FF9803;
-}
-
-input[type="radio"]#bad4:not(:checked) + label h2 {
-    color: #ff6235;
-}
-
-/*Question 5*/
-input[type="radio"]#good5:not(:checked) + label h2 {
-    color: #00d46b;
-}
-
-input[type="radio"]#average5:not(:checked) + label h2 {
-    color: #FF9803;
-}
-
-input[type="radio"]#bad5:not(:checked) + label h2 {
-    color: #ff6235;
-}
-
-/*Question 6*/
-input[type="radio"]#good6:not(:checked) + label h2 {
-    color: #00d46b;
-}
-
-input[type="radio"]#average6:not(:checked) + label h2 {
-    color: #FF9803;
-}
-
-input[type="radio"]#bad6:not(:checked) + label h2 {
-    color: #ff6235;
-}
-
-/*Question 7*/
-input[type="radio"]#good7:not(:checked) + label h2 {
-    color: #00d46b;
-}
-
-input[type="radio"]#average7:not(:checked) + label h2 {
-    color: #FF9803;
-}
-
-input[type="radio"]#bad7:not(:checked) + label h2 {
-    color: #ff6235;
-}
-
-/*Question 8*/
-input[type="radio"]#good8:not(:checked) + label h2 {
-    color: #00d46b;
-}
-
-input[type="radio"]#average8:not(:checked) + label h2 {
-    color: #FF9803;
-}
-
-input[type="radio"]#bad8:not(:checked) + label h2 {
-    color: #ff6235;
-}
-
-.groen-fade {
+    .groen-fade {
     background-color: rgba(0, 212, 107, 0.1);
     display: flex;
     justify-content: center;
@@ -184,315 +92,36 @@ input[type="radio"]#bad8:not(:checked) + label h2 {
     color: #ff6235 !important;
 }
 
-/*Question 1*/
-/*Knop NIET ingedrukt: */
-
-input[type="radio"]#good:not(:checked) + label {
+.question input[type="radio"].good:not(:checked) + label  {
     border: 2px solid #00d46b;
 }
 
-input[type="radio"]#average:not(:checked) + label {
+.question input[type="radio"].average:not(:checked) + label  {
     border: 2px solid #FF9803;
 }
 
-input[type="radio"]#bad:not(:checked) + label {
+.question input[type="radio"].bad:not(:checked) + label  {
     border: 2px solid #ff6235;
     color #ffffff;
 }
 
-/*Knop ingedrukt: */
-
-input[type="radio"]#good:checked + label {
+.question input[type="radio"].good:checked + label {
     color: hsla(215, 0%, 100%, 1);
     box-shadow: 0px 0px 20px #00d46b;
     background: #00d46b;
     border-color: #00d46b;
 }
 
-input[type="radio"]#average:checked + label {
+.question input[type="radio"].average:checked + label {
     background: #FF9803;
     border-color: #FF9803;
     color: hsla(215, 0%, 100%, 1);
     box-shadow: 0px 0px 20px #FF9803;
 }
 
-input[type="radio"]#bad:checked + label {
+.question input[type="radio"].bad:checked + label {
     background: #ff6235;
     border-color: #ff6235;
     color: hsla(215, 0%, 100%, 1);
     box-shadow: 0px 0px 20px #ff6235;
 }
-
-/*Question 2*/
-/*Knop NIET ingedrukt: */
-
-input[type="radio"]#good2:not(:checked) + label {
-    border: 2px solid #00d46b;
-}
-
-input[type="radio"]#average2:not(:checked) + label {
-    border: 2px solid #FF9803;
-}
-
-input[type="radio"]#bad2:not(:checked) + label {
-    border: 2px solid #ff6235;
-    color: #ffffff;
-}
-
-/*Knop ingedrukt: */
-
-input[type="radio"]#good2:checked + label {
-    color: hsla(215, 0%, 100%, 1);
-    box-shadow: 0px 0px 20px #00d46b;
-    background: #00d46b;
-    border-color: #00d46b;
-}
-
-input[type="radio"]#average2:checked + label {
-    background: #FF9803;
-    border-color: #FF9803;
-    color: hsla(215, 0%, 100%, 1);
-    box-shadow: 0px 0px 20px #FF9803;
-}
-
-input[type="radio"]#bad2:checked + label {
-    background: #ff6235;
-    border-color: #ff6235;
-    color: hsla(215, 0%, 100%, 1);
-    box-shadow: 0px 0px 20px #ff6235;
-}
-
-/*Question 3*/
-/*Knop NIET ingedrukt: */
-
-input[type="radio"]#good3:not(:checked) + label {
-    border: 2px solid #00d46b;
-}
-
-input[type="radio"]#average3:not(:checked) + label {
-    border: 2px solid #FF9803;
-}
-
-input[type="radio"]#bad3:not(:checked) + label {
-    border: 2px solid #ff6235;
-    color #ffffff;
-}
-
-/*Knop ingedrukt: */
-
-input[type="radio"]#good3:checked + label {
-    color: hsla(215, 0%, 100%, 1);
-    box-shadow: 0px 0px 20px #00d46b;
-    background: #00d46b;
-    border-color: #00d46b;
-}
-
-input[type="radio"]#average3:checked + label {
-    background: #FF9803;
-    border-color: #FF9803;
-    color: hsla(215, 0%, 100%, 1);
-    box-shadow: 0px 0px 20px #FF9803;
-}
-
-input[type="radio"]#bad3:checked + label {
-    background: #ff6235;
-    border-color: #ff6235;
-    color: hsla(215, 0%, 100%, 1);
-    box-shadow: 0px 0px 20px #ff6235;
-}
-
-/*Question 4*/
-/*Knop NIET ingedrukt: */
-
-input[type="radio"]#good4:not(:checked) + label {
-    border: 2px solid #00d46b;
-}
-
-input[type="radio"]#average4:not(:checked) + label {
-    border: 2px solid #FF9803;
-}
-
-input[type="radio"]#bad4:not(:checked) + label {
-    border: 2px solid #ff6235;
-    color #ffffff;
-}
-
-/*Knop ingedrukt: */
-
-input[type="radio"]#good4:checked + label {
-    color: hsla(215, 0%, 100%, 1);
-    box-shadow: 0px 0px 20px #00d46b;
-    background: #00d46b;
-    border-color: #00d46b;
-}
-
-input[type="radio"]#average4:checked + label {
-    background: #FF9803;
-    border-color: #FF9803;
-    color: hsla(215, 0%, 100%, 1);
-    box-shadow: 0px 0px 20px #FF9803;
-}
-
-input[type="radio"]#bad4:checked + label {
-    background: #ff6235;
-    border-color: #ff6235;
-    color: hsla(215, 0%, 100%, 1);
-    box-shadow: 0px 0px 20px #ff6235;
-}
-
-/*Question 5*/
-/*Knop NIET ingedrukt: */
-
-input[type="radio"]#good5:not(:checked) + label {
-    border: 2px solid #00d46b;
-}
-
-input[type="radio"]#average5:not(:checked) + label {
-    border: 2px solid #FF9803;
-}
-
-input[type="radio"]#bad5:not(:checked) + label {
-    border: 2px solid #ff6235;
-    color #ffffff;
-}
-
-/*Knop ingedrukt: */
-
-input[type="radio"]#good5:checked + label {
-    color: hsla(215, 0%, 100%, 1);
-    box-shadow: 0px 0px 20px #00d46b;
-    background: #00d46b;
-    border-color: #00d46b;
-}
-
-input[type="radio"]#average5:checked + label {
-    background: #FF9803;
-    border-color: #FF9803;
-    color: hsla(215, 0%, 100%, 1);
-    box-shadow: 0px 0px 20px #FF9803;
-}
-
-input[type="radio"]#bad5:checked + label {
-    background: #ff6235;
-    border-color: #ff6235;
-    color: hsla(215, 0%, 100%, 1);
-    box-shadow: 0px 0px 20px #ff6235;
-}
-
-/*Question 6*/
-/*Knop NIET ingedrukt: */
-
-input[type="radio"]#good6:not(:checked) + label {
-    border: 2px solid #00d46b;
-}
-
-input[type="radio"]#average6:not(:checked) + label {
-    border: 2px solid #FF9803;
-}
-
-input[type="radio"]#bad6:not(:checked) + label {
-    border: 2px solid #ff6235;
-    color #ffffff;
-}
-
-/*Knop ingedrukt: */
-
-input[type="radio"]#good6:checked + label {
-    color: hsla(215, 0%, 100%, 1);
-    box-shadow: 0px 0px 20px #00d46b;
-    background: #00d46b;
-    border-color: #00d46b;
-}
-
-input[type="radio"]#average6:checked + label {
-    background: #FF9803;
-    border-color: #FF9803;
-    color: hsla(215, 0%, 100%, 1);
-    box-shadow: 0px 0px 20px #FF9803;
-}
-
-input[type="radio"]#bad6:checked + label {
-    background: #ff6235;
-    border-color: #ff6235;
-    color: hsla(215, 0%, 100%, 1);
-    box-shadow: 0px 0px 20px #ff6235;
-}
-
-/*Question 7*/
-/*Knop NIET ingedrukt: */
-
-input[type="radio"]#good7:not(:checked) + label {
-    border: 2px solid #00d46b;
-}
-
-input[type="radio"]#average7:not(:checked) + label {
-    border: 2px solid #FF9803;
-}
-
-input[type="radio"]#bad7:not(:checked) + label {
-    border: 2px solid #ff6235;
-    color #ffffff;
-}
-
-/*Knop ingedrukt: */
-
-input[type="radio"]#good7:checked + label {
-    color: hsla(215, 0%, 100%, 1);
-    box-shadow: 0px 0px 20px #00d46b;
-    background: #00d46b;
-    border-color: #00d46b;
-}
-
-input[type="radio"]#average7:checked + label {
-    background: #FF9803;
-    border-color: #FF9803;
-    color: hsla(215, 0%, 100%, 1);
-    box-shadow: 0px 0px 20px #FF9803;
-}
-
-input[type="radio"]#bad7:checked + label {
-    background: #ff6235;
-    border-color: #ff6235;
-    color: hsla(215, 0%, 100%, 1);
-    box-shadow: 0px 0px 20px #ff6235;
-}
-
-/*Question 8*/
-/*Knop NIET ingedrukt: */
-
-input[type="radio"]#good8:not(:checked) + label {
-    border: 2px solid #00d46b;
-}
-
-input[type="radio"]#average8:not(:checked) + label {
-    border: 2px solid #FF9803;
-}
-
-input[type="radio"]#bad8:not(:checked) + label {
-    border: 2px solid #ff6235;
-    color #ffffff;
-}
-
-/*Knop ingedrukt: */
-
-input[type="radio"]#good8:checked + label {
-    color: hsla(215, 0%, 100%, 1);
-    box-shadow: 0px 0px 20px #00d46b;
-    background: #00d46b;
-    border-color: #00d46b;
-}
-
-input[type="radio"]#average8:checked + label {
-    background: #FF9803;
-    border-color: #FF9803;
-    color: hsla(215, 0%, 100%, 1);
-    box-shadow: 0px 0px 20px #FF9803;
-}
-
-input[type="radio"]#bad8:checked + label {
-    background: #ff6235;
-    border-color: #ff6235;
-    color: hsla(215, 0%, 100%, 1);
-    box-shadow: 0px 0px 20px #ff6235;
-}
-

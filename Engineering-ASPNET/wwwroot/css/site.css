@@ -138,10 +138,38 @@ button:hover {
   margin-top: 50px !important;
 }
 
-.result {
+.result-green {
     display: inline-block;
     color: white !important;
     background-color: rgba(0, 212, 107, 0.1);
     padding: 10px 25px;
     border-radius: 50px;
+}
+
+.text-green {
+    color: #00d46b
+}
+
+.result-orange {
+    display: inline-block;
+    color: white !important;
+    background-color: rgba(255, 152, 3, 0.1);
+    padding: 10px 25px;
+    border-radius: 50px;
+}
+
+.text-orange {
+    color: #ff9803;
+}
+
+.result-red {
+    display: inline-block;
+    color: white !important;
+    background-color: rgba(255, 98, 53, 0.1);
+    padding: 10px 25px;
+    border-radius: 50px;
+}
+
+.text-red {
+    color: #ff6235;
 }

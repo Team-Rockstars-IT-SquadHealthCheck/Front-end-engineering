@@ -54,6 +54,19 @@ namespace Engineering_ASPNET.BLL
             return surveys;
         }
 
+        public Survey GetSurveyBy(int id)
+        {
+            var surveys = GetSurveys();
+            foreach (var survey in surveys)
+            {
+                if (survey.Survey_ID == id)
+                {
+                    return survey;
+                }
+            }
+            return null;
+        }
+
         public int ValidateID(string id)
         {
             Task<string> user_ID = _repository.ValidateID(id);
