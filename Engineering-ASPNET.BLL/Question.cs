@@ -17,5 +17,12 @@ namespace Engineering_ASPNET.DAL
         public string? Description { get; set;}
         [JsonProperty("title")]
         public string? Title { get; set;}
-    }
+		[JsonProperty("descGood")]
+		public string? Good_Answer { get; set; }
+		[JsonProperty("descAvg")]
+		public string? Avg_Answer { get; set; }
+		[JsonProperty("descBad")]
+		public string? Bad_Answer { get; set; }
+
+	}
 }

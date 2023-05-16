@@ -18,19 +18,19 @@
                 <div>
                     <input style="" type="radio" class="good" name="Answers[@(y)]" value="0" id="good@(y+1)">
                     <label class="groen-fade" for="good@(y+1)">
-                        <h2>Positive</h2>
+                        <h2>@Model.questions[y].Good_Answer</h2>
                     </label>
                 </div>
                 <div>
                     <input type="radio" class="average" name="Answers[@(y)]" value="1" id="average@(y+1)">
                     <label class="oranje-fade" for="average@(y+1)">
-                        <h2>Average</h2>
+                        <h2>@Model.questions[y].Avg_Answer</h2>
                     </label>
                 </div>
                 <div>
                     <input type="radio" class="bad" name="Answers[@(y)]" value="2" id="bad@(y+1)">
                     <label class="rode-fade" for="bad@(y+1)">
-                        <h2>Negative</h2>
+                        <h2>@Model.questions[y].Bad_Answer</h2>
                     </label>
                 </div>
             </div>
