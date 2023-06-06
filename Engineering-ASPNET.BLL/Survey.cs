@@ -9,13 +9,13 @@ namespace Engineering_ASPNET.DAL
 {
     public class Survey
     {
-        [JsonProperty("id")]
+        [JsonProperty("Id")]
         public int Survey_ID { get; set; }
-        [JsonProperty("name")]
+        [JsonProperty("Name")]
         public string? Name { get; set; }
-        [JsonProperty("description")]
+        [JsonProperty("Description")]
         public string? Description { get; set; }
-        [JsonProperty("questions")]
+        [JsonProperty("Questions")]
         public List<Question> Questions { get; set; }
     }
 }
