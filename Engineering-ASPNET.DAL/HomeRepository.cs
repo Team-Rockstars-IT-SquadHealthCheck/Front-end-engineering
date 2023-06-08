@@ -21,7 +21,7 @@ namespace Engineering_ASPNET.DAL
             string json = JsonConvert.SerializeObject(answers);
             var stringContent = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
 
-            var response = await httpClient.PostAsync("https://localhost:32770/Answer", stringContent);
+            var response = await httpClient.PostAsync("http://138.201.52.251:8081/Answer", stringContent);
 
             if (response.IsSuccessStatusCode)
             {
@@ -43,14 +43,14 @@ namespace Engineering_ASPNET.DAL
         public async Task<string> GetSurveyBy(string id)
         {
             HttpClient httpClient = new();
-            string survey = await httpClient.GetStringAsync($"https://localhost:32770/survey/{id}");
+            string survey = await httpClient.GetStringAsync($"http://138.201.52.251:8081/survey/{id}");
             return survey;
         }
 
         public async Task<string> ValidateID(string id)
         {
             HttpClient httpClient = new();
-              string user_ID = await httpClient.GetStringAsync($"https://localhost:32770/Validate/{id}");
+              string user_ID = await httpClient.GetStringAsync($"http://138.201.52.251:8081/Validate/{id}");
             return user_ID;
         }
 
@@ -58,14 +58,14 @@ namespace Engineering_ASPNET.DAL
         {
             HttpClient httpClient = new();
 
-            string response = await httpClient.GetStringAsync($"https://localhost:32770/StatusFilled/{id}");
+            string response = await httpClient.GetStringAsync($"http://138.201.52.251:8081/StatusFilled/{id}");
 
         }
 
         public async Task<string> GetAnswersBy(string id)
         {
             HttpClient httpClient = new();
-            string surveys = await httpClient.GetStringAsync($"https://localhost:32770/Answer/{id}");
+            string surveys = await httpClient.GetStringAsync($"http://138.201.52.251:8081/Answer/{id}");
             return surveys;
         }
     }
