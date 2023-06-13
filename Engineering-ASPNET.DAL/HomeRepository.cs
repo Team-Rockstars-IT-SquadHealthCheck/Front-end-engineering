@@ -40,11 +40,33 @@ namespace Engineering_ASPNET.DAL
             return surveys;
         }
 
+        public async Task<string> GetSurveyBy(string id)
+        {
+            HttpClient httpClient = new();
+            string survey = await httpClient.GetStringAsync($"http://138.201.52.251:8081/survey/{id}");
+            return survey;
+        }
+
         public async Task<string> ValidateID(string id)
         {
             HttpClient httpClient = new();
               string user_ID = await httpClient.GetStringAsync($"http://138.201.52.251:8081/Validate/{id}");
             return user_ID;
+        }
+
+        public async void PostStatus(string id)
+        {
+            HttpClient httpClient = new();
+
+            string response = await httpClient.GetStringAsync($"http://138.201.52.251:8081/StatusFilled/{id}");
+
+        }
+
+        public async Task<string> GetAnswersBy(string id)
+        {
+            HttpClient httpClient = new();
+            string surveys = await httpClient.GetStringAsync($"http://138.201.52.251:8081/Answer/{id}");
+            return surveys;
         }
     }
 }

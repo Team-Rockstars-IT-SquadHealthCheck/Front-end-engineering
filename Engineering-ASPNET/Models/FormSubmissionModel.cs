@@ -14,8 +14,8 @@ public class FormSubmissionModel
 {
     public List<int> Answers { get; set; }
     public List<Question> questions { get; set; }
-    public List<string> questionTextColors { get; set; }
-    public List<string> questionBackgroundColors { get; set; }
+    public List<string> questionTextColors { get; set; } = new List<string>();
+    public List<string> questionBackgroundColors { get; set; } = new List<string>();
     
     //Link? Id?
     public string Guid { get; set; } = "";

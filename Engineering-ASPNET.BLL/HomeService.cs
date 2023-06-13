@@ -27,7 +27,7 @@ namespace Engineering_ASPNET.BLL
             return helloWorld;
         }
 
-        public void SubmitAnswers(IEnumerable<AnswerModel> answers)
+        public void SubmitAnswers(IEnumerable<AnswerModel> answers, string id)
         {
             List<AnswerModel> answerDtos = new List<AnswerModel>();
 
@@ -43,7 +43,7 @@ namespace Engineering_ASPNET.BLL
                 answerDtos.Add(answerDto);
             }
             _repository.SubmitAnswers(answerDtos);
-
+            _repository.PostStatus(id);
         }
         public IEnumerable<Survey> GetSurveys()
         {
@@ -54,26 +54,32 @@ namespace Engineering_ASPNET.BLL
             return surveys;
         }
 
-        public Survey GetSurveyBy(int id)
+        public Survey GetSurveyBy(string id)
         {
-            var surveys = GetSurveys();
-            foreach (var survey in surveys)
-            {
-                if (survey.Survey_ID == id)
-                {
-                    return survey;
-                }
-            }
-            return null;
+            Task<string> surveysString = _repository.GetSurveyBy(id);
+            surveysString.Wait();
+            string surveysJson = surveysString.Result;
+            Survey survey = JsonConvert.DeserializeObject<Survey>(surveysJson);
+            return survey;
         }
 
-        public int ValidateID(string id)
+        public Url ValidateID(string id)
         {
-            Task<string> user_ID = _repository.ValidateID(id);
+            Task<string> urlString = _repository.ValidateID(id);
 
-            user_ID.Wait();
-            string User_ID = user_ID.Result;
-            return Convert.ToInt32(User_ID);
+            urlString.Wait();
+            string urlJson = urlString.Result;
+
+            Url url = JsonConvert.DeserializeObject<Url>(urlJson);
+            return url;
+        }
+        public List<AnswerModel> GetAnswersBy(string id)
+        { 
+            Task<string> answersString = _repository.GetAnswersBy(id);
+            answersString.Wait();
+            string answerJson = answersString.Result;
+            List<AnswerModel> answers = JsonConvert.DeserializeObject<List<AnswerModel>>(answerJson);
+            return answers;
         }
     }
 }

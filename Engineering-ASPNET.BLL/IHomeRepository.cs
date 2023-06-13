@@ -14,5 +14,8 @@ namespace Engineering_ASPNET.BLL
         void SubmitAnswers(IEnumerable<AnswerModel> answers);
         Task<string> GetSurveys();
         Task<string> ValidateID(string id);
+        Task<string> GetAnswersBy(string id);
+        void PostStatus(string id);
+        Task<string> GetSurveyBy(string id);
     }
 }

@@ -25,7 +25,7 @@ public class HomeController : Controller
 
         if (id != null)
         {
-			user_ID = _homeService.ValidateID(id);
+			user_ID = _homeService.ValidateID(id).userid;
             HttpContext.Session.SetInt32("user_id", user_ID);
         }
         if (user_ID == 0 && HttpContext.Session.GetInt32("user_id") == null)
@@ -44,17 +44,43 @@ public class HomeController : Controller
     [ValidateAntiForgeryToken]
     public IActionResult Index(string id)
     {
-        if (id != null && GetQuestionsBy(9) != null)
+        Url url = _homeService.ValidateID(id);
+
+        if (id != null && GetQuestionsBy(id) != null)
         {
-            return RedirectToAction("Form", "Home", new { id } );
+            if (url.status != 1)
+            {
+                return RedirectToAction("Form", "Home", new { id });
+            }
+            else if (url.status == 1)
+            {
+                FormSubmissionModel model = new FormSubmissionModel();
+                List<AnswerModel> answersModels = _homeService.GetAnswersBy(id);
+                List<int> answers = new List<int>();
+                foreach (var answerModel in answersModels)
+                {
+                    answers.Add(answerModel.Answer);
+                }
+
+                foreach (var answer in answers)
+                {
+                    setColors(model, answer);
+                }
+                model.Guid = id;
+                model.Answers = answers;
+                return RedirectToAction("BedanktScherm", "Home", model);
+            }
         }
-        return View(id);
+        return View();
     }
     public IActionResult Form(string id)
     {
-        var questions = GetQuestionsBy(9);
+        var questions = GetQuestionsBy(id);
 
-        if (id != null && _homeService.ValidateID(id) != 0)
+
+        Url url = _homeService.ValidateID(id);
+
+        if (id != null && url.userid != 0)
         {
             FormSubmissionModel model = new FormSubmissionModel();
             model.Guid = id;
@@ -72,9 +98,11 @@ public class HomeController : Controller
     [ValidateAntiForgeryToken]
     public IActionResult Form(FormSubmissionModel model, string id)
     {
-        model.questions = GetQuestionsBy(9); ;
+        model.questions = GetQuestionsBy(id); ;
 
-		if (_homeService.ValidateID(id) != 0) 
+        Url url = _homeService.ValidateID(id);
+
+        if (url.userid != 0) 
         {
             int user_ID = (int)HttpContext.Session.GetInt32("user_id");
 
@@ -84,10 +112,9 @@ public class HomeController : Controller
                 ViewData["validationMessage"] = validation;
                 return View(model);
             }
+
             List<int> questionValues = model.Answers;
-            List<AnswerModel> answers = new List<AnswerModel>();
-            model.questionTextColors = new List<string>();
-            model.questionBackgroundColors = new List<string>();
+            List<AnswerModel> answers = new List<AnswerModel>();;
 
             for (int i = 0; i < questionValues.Count; i++)
             {
@@ -98,26 +125,12 @@ public class HomeController : Controller
                     Answer = questionValues[i],
                     Comment = "" // for now empty
                 };
-                if (questionValues[i] == 0)
-                {
-                    model.questionTextColors.Add("text-green");
-                    model.questionBackgroundColors.Add("result-green");
-                }
-                else if (questionValues[i] == 1)
-                {
-                    model.questionTextColors.Add("text-orange");
-                    model.questionBackgroundColors.Add("result-orange");
-                }
-                else if (questionValues[i] == 2)
-                {
-                    model.questionTextColors.Add("text-red");
-                    model.questionBackgroundColors.Add("result-red");
-                }
+                setColors(model, answer.Answer);
                 answers.Add(answer);
             }
 
-            
-            _homeService.SubmitAnswers(answers);
+            _homeService.SubmitAnswers(answers, id);
+            model.Guid = id;
             return RedirectToAction("BedanktScherm", "Home", model);
 
         }
@@ -126,19 +139,45 @@ public class HomeController : Controller
     }
     public IActionResult BedanktScherm(FormSubmissionModel model)
     {
-        model.questions = GetQuestionsBy(9);
+
+        model.questions = GetQuestionsBy(model.Guid);
         return View(model);
     }
 
     [NonAction]
-    public List<Question> GetQuestionsBy(int id)
+    public List<Question> GetQuestionsBy(string id)
     {
         List<Question> questions = new List<Question>();
 
-        var survey = _homeService.GetSurveyBy(id);
+        if (!string.IsNullOrEmpty(id))
+        {
+            var survey = _homeService.GetSurveyBy(id);
 
-        questions.AddRange(survey.Questions);
-        return questions;
+            questions.AddRange(survey.Questions);
+            return questions;
+        }
+        return null;
+    }
+
+    [NonAction]
+    public FormSubmissionModel setColors(FormSubmissionModel model, int questionValues)
+    {
+        if (questionValues == 0)
+        {
+            model.questionTextColors.Add("text-green");
+            model.questionBackgroundColors.Add("result-green");
+        }
+        else if (questionValues == 1)
+        {
+            model.questionTextColors.Add("text-orange");
+            model.questionBackgroundColors.Add("result-orange");
+        }
+        else if (questionValues == 2)
+        {
+            model.questionTextColors.Add("text-red");
+            model.questionBackgroundColors.Add("result-red");
+        }
+        return model;
     }
     public IActionResult UserError()
     {
