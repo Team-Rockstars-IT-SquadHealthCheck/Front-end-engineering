@@ -61,11 +61,6 @@ public class HomeController : Controller
                 {
                     answers.Add(answerModel.Answer);
                 }
-
-                foreach (var answer in answers)
-                {
-                    setColors(model, answer);
-                }
                 model.Guid = id;
                 model.Answers = answers;
                 return RedirectToAction("BedanktScherm", "Home", model);
@@ -139,8 +134,13 @@ public class HomeController : Controller
     }
     public IActionResult BedanktScherm(FormSubmissionModel model)
     {
-
         model.questions = GetQuestionsBy(model.Guid);
+        List<int> lastAnswers = model.Answers.Skip(model.Answers.Count - model.questions.Count).ToList();
+        model.Answers = lastAnswers;
+        foreach (var answer in lastAnswers)
+        {
+            setColors(model, answer);
+        }
         return View(model);
     }
 
